@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog Mitra - Demo Warung</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="toko-header">
+        <h1 id="nama-toko">Toko Kelontong & Laundry Cisitu</h1>
+        <p>Buka: 08.00 - 22.00 | Siap Antar ke Kosan!</p>
+    </header>
+
+    <main class="katalog-container">
+        
+        <section class="kategori">
+            <h2>Layanan Laundry</h2>
+            <div class="produk-grid">
+                <div class="kartu-produk">
+                    <img src="https://via.placeholder.com/150" alt="Cuci Komplit">
+                    <h3 class="nama-produk">Cuci Komplit (Per Kg)</h3>
+                    <p class="harga-produk">Rp 6.000</p>
+                    <button class="btn-tambah" data-nama="Cuci Komplit 1Kg" data-harga="6000">+ Tambah</button>
+                </div>
+                <div class="kartu-produk">
+                    <img src="https://via.placeholder.com/150" alt="Cuci Sepatu">
+                    <h3 class="nama-produk">Cuci Sepatu Sneaker</h3>
+                    <p class="harga-produk">Rp 25.000</p>
+                    <button class="btn-tambah" data-nama="Cuci Sepatu" data-harga="25000">+ Tambah</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="kategori">
+            <h2>Kebutuhan Kosan</h2>
+            <div class="produk-grid">
+                <div class="kartu-produk">
+                    <img src="https://via.placeholder.com/150" alt="Galon Aqua">
+                    <h3 class="nama-produk">Galon Aqua (Isi Ulang)</h3>
+                    <p class="harga-produk">Rp 20.000</p>
+                    <button class="btn-tambah" data-nama="Galon Aqua" data-harga="20000">+ Tambah</button>
+                </div>
+                <div class="kartu-produk">
+                    <img src="https://via.placeholder.com/150" alt="Indomie Goreng">
+                    <h3 class="nama-produk">Indomie Goreng (1 Dus)</h3>
+                    <p class="harga-produk">Rp 115.000</p>
+                    <button class="btn-tambah" data-nama="Indomie Dus" data-harga="115000">+ Tambah</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div class="keranjang-floating">
+        <div class="info-keranjang">
+            <span id="total-item">0 Item</span>
+            <span id="total-harga">Rp 0</span>
+        </div>
+        <button id="btn-pesan-wa">Kirim via WA</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Demo - HaloMitra</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-demo">
+    <nav class="navbar-premium">
+        <div class="nav-container">
+            <div class="logo-area">
+                <img src="logo-mitra.png" alt="Logo HaloMitra" class="logo-img">
+                <span class="brand-text">HaloMitra</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="teknologi.html">Teknologi</a></li>
+                <li><a href="demo.html" class="active">Coba Demo</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="demo-container">
+        <h1>Ruang Uji Coba</h1>
+        <p>Klik <strong>+ Tambah</strong> lalu <strong>Kirim Pesanan</strong>.</p>
+
+        <div class="mockup-hp">
+            <div class="katalog-mini">
+                <h2 style="margin-bottom: 20px;">Kios Cisitu</h2>
+                <div class="grid-produk-mini">
+                    <div class="kartu-produk-mini">
+                        <div>
+                            <h4>Nasi Goreng Spesial</h4>
+                            <span class="harga-mini">20k</span>
+                        </div>
+                        <button class="btn-tambah-demo" data-nama="Nasi Goreng Spesial" data-harga="20000">+ Tambah</button>
+                    </div>
+                    <div class="kartu-produk-mini">
+                        <div>
+                            <h4>Mie Tek-Tek Telur</h4>
+                            <span class="harga-mini">15k</span>
+                        </div>
+                        <button class="btn-tambah-demo" data-nama="Mie Tek-Tek Telur" data-harga="15000">+ Tambah</button>
+                    </div>
+                    <div class="kartu-produk-mini">
+                        <div>
+                            <h4>Kopi Aren Dingin</h4>
+                            <span class="harga-mini">12k</span>
+                        </div>
+                        <button class="btn-tambah-demo" data-nama="Kopi Aren Dingin" data-harga="12000">+ Tambah</button>
+                    </div>
+                    <div class="kartu-produk-mini">
+                        <div>
+                            <h4>Es Teh Manis</h4>
+                            <span class="harga-mini">5k</span>
+                        </div>
+                        <button class="btn-tambah-demo" data-nama="Es Teh Manis" data-harga="5000">+ Tambah</button>
+                    </div>
+                    <div class="kartu-produk-mini">
+                        <div>
+                            <h4>Roti Bakar Coklat</h4>
+                            <span class="harga-mini">18k</span>
+                        </div>
+                        <button class="btn-tambah-demo" data-nama="Roti Bakar Coklat" data-harga="18000">+ Tambah</button>
+                    </div>
+                    <div class="kartu-produk-mini">
+                        <div>
+                            <h4>Kerupuk Kaleng</h4>
+                            <span class="harga-mini">2k</span>
+                        </div>
+                        <button class="btn-tambah-demo" data-nama="Kerupuk Kaleng" data-harga="2000">+ Tambah</button>
+                    </div>
+                </div>
+
+            <div class="keranjang-demo">
+                <div>
+                    <span id="demo-total-item" style="display: block; font-size: 0.8rem;">0 Item</span>
+                    <strong id="demo-total-harga">Rp 0</strong>
+                </div>
+                <button id="btn-demo-wa">Kirim WA</button>
+            </div>
+        </div>
+    </main>
+    <script src="demo.js"></script>
+</body>
+</html>
