@@ -271,10 +271,59 @@ body {
 /* ============================================================
    6. RESPONSIVE (FOR MOBILE PHONES)
    ============================================================ */
-@media (max-width: 768px) {
-    .hero-title { font-size: 2.2rem; }
-    .nav-links, .nav-actions { display: none; }
-    .hero-buttons { flex-direction: column; }
+/* ============================================================
+   PERBAIKAN MOBILE & RESPONSIVE - ANTI ERROR
+   ============================================================ */
+   @media (max-width: 768px) {
+    /* Menu Navigasi tetap muncul dengan ukuran menyesuaikan */
+    .nav-links {
+        display: flex; 
+        gap: 12px;
+        font-size: 0.75rem;
+    }
+    
+    .nav-container {
+        padding: 10px 3%;
+    }
+
+    /* Memastikan Mockup HP di halaman Demo tidak terpotong */
+    .mockup-hp {
+        width: 100%;
+        min-width: unset;
+        margin: 20px 0;
+        padding: 15px;
+    }
+
+    /* Hero Section di Teknologi agar teks tidak bertumpuk */
+    .tech-hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .pricing-grid {
+        grid-template-columns: 1fr; /* Harga menumpuk vertikal di HP */
+    }
+}
+
+/* Badge VIP Melayang (Efek Psikologis Mewah) */
+.vip-badge-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(45deg, #ffd700, #ffa500);
+    color: #000;
+    padding: 10px 15px;
+    border-radius: 50px;
+    font-weight: 800;
+    font-size: 0.8rem;
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+    z-index: 9999;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
 }
 
 /* ============================================================
