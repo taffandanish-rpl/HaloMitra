@@ -274,7 +274,96 @@ body {
 /* ============================================================
    PERBAIKAN MOBILE & RESPONSIVE - ANTI ERROR
    ============================================================ */
-   @media (max-width: 768px) {
+    /* ============================================================
+   MOBILE PREMIUM NAVIGATION (GLASSMORPHISM)
+   ============================================================ */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 6px;
+    z-index: 1001; /* Harus di atas menu yang meluncur */
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    transition: all 0.4s ease-in-out;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+    
+    /* Sembunyikan tombol login/konsultasi di header saat mobile */
+    .nav-actions { 
+        display: none; 
+    }
+
+    /* Sidebar Menu Meluncur dari Kanan */
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Disembunyikan di luar layar */
+        height: 100vh;
+        width: 70%;
+        max-width: 300px;
+        background: rgba(255, 255, 255, 0.85); /* Transparan */
+        backdrop-filter: blur(20px); /* Efek kaca buram (Glassmorphism) */
+        -webkit-backdrop-filter: blur(20px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+        transition: right 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Animasi memantul elegan */
+        z-index: 1000;
+    }
+
+    /* Saat menu aktif (terbuka) */
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links li {
+        margin: 20px 0;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.4s ease-in-out;
+    }
+
+    .nav-links.active li {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Delay animasi muncul tiap menu agar mewah */
+    .nav-links.active li:nth-child(1) { transition-delay: 0.1s; }
+    .nav-links.active li:nth-child(2) { transition-delay: 0.2s; }
+    .nav-links.active li:nth-child(3) { transition-delay: 0.3s; }
+    .nav-links.active li:nth-child(4) { transition-delay: 0.4s; }
+
+    .nav-links a {
+        font-size: 1.3rem;
+        font-weight: 700;
+    }
+
+    /* Animasi Hamburger berubah menjadi tanda Silang (X) */
+    .menu-toggle.is-active .bar:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    .menu-toggle.is-active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle.is-active .bar:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+    
+    .hero-title { font-size: 2.2rem; }
+    .hero-buttons { flex-direction: column; }
+}
     /* Menu Navigasi tetap muncul dengan ukuran menyesuaikan */
     .nav-links {
         display: flex; 

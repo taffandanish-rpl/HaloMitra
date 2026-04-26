@@ -50,4 +50,25 @@ btnPaket.forEach(btn => {
             }
         });
     }
+    // 3. Sistem Interaksi Mobile Menu Mewah
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navLinks = document.querySelector('.nav-links');
+    const navItems = document.querySelectorAll('.nav-links li');
+
+    if(mobileMenu) {
+        mobileMenu.addEventListener('click', () => {
+            // Toggle class 'is-active' untuk animasi tombol X
+            mobileMenu.classList.toggle('is-active');
+            // Toggle class 'active' untuk memunculkan menu dari samping
+            navLinks.classList.toggle('active');
+        });
+
+        // Menutup menu jika salah satu link diklik
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                mobileMenu.classList.remove('is-active');
+                navLinks.classList.remove('active');
+            });
+        });
+    }
 });
