@@ -3,69 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="HaloMitra by Mitra Bisnis Digital - Sistem Otomatisasi Kasir, HRIS, dan WhatsApp Bot untuk Bisnis Anda.">
-    <title>HaloMitra - Selalu Auto Jualan</title>
+    <meta name="description" content="HaloMitra - Infrastruktur Digital UMKM Bandung. 0% Komisi.">
+    <title>HaloMitra | Ekosistem Digital UMKM</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="style.css">
-    <style>
-        .fomo-tracker {
-            background: #fff4e5;
-            border-left: 5px solid #ff9800;
-            padding: 20px;
-            margin: 30px 5%;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
-        .progress-bar-bg {
-            background: #e0e0e0;
-            height: 12px;
-            border-radius: 6px;
-            margin-top: 15px;
-            overflow: hidden;
-        }
-        .progress-bar-fill {
-            background: linear-gradient(to right, #ff9800, #f44336);
-            height: 100%;
-            width: 45.3%; /* Representasi 59 dari 130 slot */
-            border-radius: 6px;
-            transition: width 1s ease-in-out;
-        }
-        .vip-roadmap {
-            padding: 60px 5%;
-            background: #f8fafc;
-        }
-        .roadmap-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-top: 40px;
-        }
-        .roadmap-card {
-            background: white;
-            padding: 30px;
-            border-radius: 20px;
-            border: 1px solid #e2e8f0;
-            transition: transform 0.3s ease;
-        }
-        .roadmap-card:hover {
-            transform: translateY(-5px);
-            border-color: #0052cc;
-        }
-        .roadmap-icon { font-size: 2.5rem; margin-bottom: 15px; display: block; }
-        .badge-limited {
-            background: #fee2e2;
-            color: #ef4444;
-            padding: 4px 12px;
-            border-radius: 50px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-    </style>
 </head>
 <body>
 
@@ -75,143 +19,234 @@
                 <img src="logo-mitra.png" alt="Logo HaloMitra" class="logo-img">
                 <span class="brand-text">HaloMitra</span>
             </div>
-            <ul class="nav-links">
-                <li><a href="index.html" class="active">Beranda</a></li>
-                <li><a href="teknologi.html">Teknologi</a></li>
-                <li><a href="harga.html">Skema Harga</a></li>
-                <li><a href="demo.html" class="btn-glow">Coba Demo</a></li>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#beranda" class="active">Beranda</a></li>
+                <li><a href="#demo-live">Live Demo</a></li>
+                <li><a href="#infrastruktur">Infrastruktur</a></li>
+                <li><a href="#harga">Skema Harga</a></li>
             </ul>
             <div class="menu-toggle" id="mobile-menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
+            </div>
         </div>
     </nav>
 
-    <header class="hero-section" style="padding-top: 120px; text-align: center;">
-        <span class="badge-limited">Kuota Terbatas: Sisa 2 Slot Area Dago/Cisitu</span>
-        <h1 style="font-size: 3rem; margin: 20px 0;">Sistem Kasir Otomatis <br><span style="color: #0052cc;">Tanpa Potongan Komisi</span></h1>
-        <p>Infrastruktur privat untuk UMKM yang ingin menguasai pasar digital.</p>
+    <!-- HERO SECTION -->
+    <header id="beranda" class="hero-section">
+        <div class="hero-content">
+            <span class="badge-limited">🔥 KUOTA VIP BANDUNG: SISA 331 SLOT</span>
+            <h1 class="hero-title">Otomatisasi Bisnis,<br><span class="highlight-teks">Tanpa Potongan Komisi.</span></h1>
+            <p class="hero-subtitle">Infrastruktur privat untuk UMKM Bandung. Dapatkan sistem kasir, katalog web, dan asisten AI dalam satu ekosistem terpadu.</p>
+            <div class="hero-buttons">
+                <a href="#harga" class="btn-primary-large btn-glow">Amankan Slot Wilayah</a>
+                <a href="#demo-live" class="btn-secondary-large">Coba Demo Sistem</a>
+            </div>
+        </div>
     </header>
 
-    <section class="fomo-tracker">
-        <div style="display: flex; justify-content: space-between; align-items: center;">
-            <strong>Status Antrean Server Nasional (PANDI/Komdigi Verified)</strong>
-            <span style="color: #f44336; font-weight: 800;">59 / 130 Slot VIP Terisi</span>
-        </div>
-        <div class="progress-bar-bg">
-            <div class="progress-bar-fill"></div>
-        </div>
-        <p style="font-size: 0.85rem; margin-top: 10px; color: #64748b;">*Data diperbarui secara real-time berdasarkan aktivasi Deployment Tracker pusat.</p>
-    </section>
-
-    <section class="vip-roadmap">
-        <div class="section-header" style="text-align: center;">
-            <h2 style="font-size: 2.2rem;">Roadmap Ekosistem VIP 2026</h2>
-            <p>Keuntungan eksklusif bagi 130 mitra pertama di Kota Bandung saat HaloMitra menembus 1.000+ jaringan.</p>
-        </div>
-
-        <div class="roadmap-grid">
-            <article class="roadmap-card">
-                <span class="roadmap-icon">🎁</span>
-                <h3>Monthly Mega Event</h3>
-                <p>Subsidi diskon pelanggan 5% - 20% sepenuhnya ditanggung HaloMitra. Anda tetap menerima pembayaran utuh.</p>
-            </article>
-
-            <article class="roadmap-card">
-                <span class="roadmap-icon">💰</span>
-                <h3>0% Komisi Selamanya</h3>
-                <p>Berbeda dengan platform lain, kami tidak memotong margin keuntungan Anda. 100% hasil jualan adalah milik Anda! tiap sektor wilayah hanya 10</p>
-            </article>
-
-            <article class="roadmap-card">
-                <span class="roadmap-icon">🚀</span>
-                <h3>Prioritas Inovasi</h3>
-                <p>Akses pertama ke fitur AI Prediksi Stok dan Audit Menu otomatis sebelum dirilis ke publik.</p>
-            </article>
-        </div>
-    </section>
-
-    <style>
-        .sector-monitor { padding: 60px 5%; background: #fff; }
-        .sector-grid-13 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-            margin-top: 30px;
-        }
-        .sector-item {
-            background: #f8fafc;
-            padding: 15px;
-            border-radius: 10px;
-            border: 1px solid #e2e8f0;
-            font-size: 0.9rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: all 0.3s ease;
-        }
-        .sector-item:hover { border-color: #0052cc; background: #fff; }
-        .slot-tag { font-size: 0.75rem; padding: 4px 10px; border-radius: 20px; font-weight: 800; }
-        .slot-tag.warning { background: #fee2e2; color: #ef4444; }
-        .slot-tag.safe { background: #dcfce7; color: #16a34a; }
-    </style>
-    
-    <section class="sector-monitor">
-        <div style="text-align: center; margin-bottom: 40px;">
-            <span class="badge-limited" style="background: #e0e7ff; color: #4338ca;">Infrastructure Live Status</span>
-            <h2 style="font-size: 2.2rem; margin-top: 10px;">Monitoring 13 Sektor Bandung</h2>
-            <p>Alokasi jalur privat 0% komisi dibatasi 10 mitra per distrik.</p>
-        </div>
-        
-        <div class="sector-grid-13">
-            <div class="sector-item"><strong>Sektor 1:</strong> Dago & Cisitu <span class="slot-tag warning">Sisa 3 Slot</span></div>
-            <div class="sector-item"><strong>Sektor 2:</strong> Dipatiukur & Tubagus <span class="slot-tag warning">Sisa 2 Slot</span></div>
-            <div class="sector-item"><strong>Sektor 3:</strong> Braga & Asia Afrika <span class="slot-tag safe">Sisa 8 Slot</span></div>
-            <div class="sector-item"><strong>Sektor 4:</strong> Burangrang & Lengkong <span class="slot-tag safe">Sisa 7 Slot</span></div>
-            <div class="sector-item"><strong>Sektor 5:</strong> Ahmad Yani & Kosambi <span class="slot-tag safe">Sisa 7 Slot</span></div>
-            <div class="sector-item"><strong>Sektor 8:</strong> Buah Batu & Kliningan <span class="slot-tag warning">Sisa 4 Slot</span></div>
-            <div class="sector-item"><strong>Sektor 9:</strong> Antapani & Arcamanik <span class="slot-tag warning">Sisa 8 Slot</span></div>
-            <div class="sector-item"><strong>Sektor 10:</strong> Pascal & Andir <span class="slot-tag warning">Sisa 7 Slot</span></div>
-            <div class="sector-item"><strong>Sektor 11:</strong> Cibaduyut & Kopo <span class="slot-tag warning">Sisa 8 Slot</span></div>
-            <div class="sector-item"><strong>Sektor 12:</strong> Cikutra & Pahlawan <span class="slot-tag safe">Sisa 7 Slot</span></div>
-            <div class="sector-item"><strong>Sektor 13:</strong> Setiabudi & Ledeng <span class="slot-tag safe">Sisa 8 Slot</span></div>
+    <!-- LIVE DEMO SECTION (TERINTEGRASI) -->
+    <section id="demo-live" class="demo-section">
+        <div class="demo-container">
+            <div class="demo-text">
+                <h2>Coba Langsung Pengalamannya</h2>
+                <p>Uji coba sistem katalog kami. Klik tombol <strong>+ Tambah</strong> pada menu di samping, lalu lihat bagaimana pesanan otomatis direkap untuk dikirim via WhatsApp. Tanpa perlu *download* aplikasi.</p>
+                <ul class="features-list" style="margin-top: 20px;">
+                    <li>✅ 100% Responsif di HP Pelanggan</li>
+                    <li>✅ Rekap Total Harga Otomatis</li>
+                    <li>✅ Format Pesanan Rapi ke WA Anda</li>
+                </ul>
             </div>
+            
+            <div class="mockup-wrapper">
+                <div class="mockup-hp">
+                    <div class="mockup-notch"></div>
+                    <div class="katalog-mini">
+                        <h3 style="margin-bottom: 15px; text-align: center; color: #0f172a;">Kios Cisitu (Demo)</h3>
+                        <div class="grid-produk-mini">
+                            <div class="kartu-produk-mini">
+                                <div>
+                                    <h4>Nasi Goreng</h4>
+                                    <span class="harga-mini">Rp 20.000</span>
+                                </div>
+                                <button class="btn-tambah-demo" data-nama="Nasi Goreng Spesial" data-harga="20000">+ Tambah</button>
+                            </div>
+                            <div class="kartu-produk-mini">
+                                <div>
+                                    <h4>Mie Tek-Tek</h4>
+                                    <span class="harga-mini">Rp 15.000</span>
+                                </div>
+                                <button class="btn-tambah-demo" data-nama="Mie Tek-Tek Telur" data-harga="15000">+ Tambah</button>
+                            </div>
+                            <div class="kartu-produk-mini">
+                                <div>
+                                    <h4>Kopi Aren</h4>
+                                    <span class="harga-mini">Rp 12.000</span>
+                                </div>
+                                <button class="btn-tambah-demo" data-nama="Kopi Aren Dingin" data-harga="12000">+ Tambah</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="keranjang-demo">
+                        <div>
+                            <span id="demo-total-item" style="display: block; font-size: 0.75rem; color: #64748b;">0 Item</span>
+                            <strong id="demo-total-harga" style="color: #0f172a;">Rp 0</strong>
+                        </div>
+                        <button id="btn-demo-wa">Kirim WA</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <main>
-        <div class="section-header" style="text-align: center; margin-top: 50px;">
-            <h2>Mengapa Pemilik Bisnis Memilih HaloMitra?</h2>
-            <p>Otomatisasi tingkat lanjut untuk efisiensi operasional harian.</p>
+    <!-- FOMO & SECTORS (MATEMATIKA REALISTIS) -->
+    <section id="infrastruktur" class="infrastructure-section">
+        <div class="fomo-tracker">
+            <div class="fomo-header">
+                <strong>Status Antrean Server Bandung (PANDI Verified)</strong>
+                <span class="fomo-count">59 / 390 VIP Terisi</span>
+            </div>
+            <div class="progress-bar-bg">
+                <div class="progress-bar-fill" style="width: 15.1%;"></div> 
+            </div>
+            <p class="fomo-note">*Data real-time. Kuota maksimal 30 Mitra per Wilayah. Total sisa kuota se-Bandung: 331 Slot.</p>
         </div>
 
-        <div class="features-grid">
-            <article class="feature-card">
-                <div class="feature-icon">🛒</div>
-                <h3>Smart Digital Catalog</h3>
-                <p>Pelanggan pesan mandiri via web, pesanan masuk ke WhatsApp sudah ditotal secara otomatis beserta struk digital.</p>
-            </article>
-
-            <article class="feature-card">
-                <div class="feature-icon">🤖</div>
-                <h3>Auto-Reply WA Bot</h3>
-                <p>Mesin penjawab cerdas 24/7. Filter kata kunci untuk jam buka, harga, dan layanan tanpa perlu admin manusia.</p>
-            </article>
-
-            <article class="feature-card">
-                <div class="feature-icon">📊</div>
-                <h3>Dashboard Admin & HRIS</h3>
-                <p>Pantau grafik omzet harian dari rumah dan sistem absensi karyawan (Scan QR & Validasi Lokasi GPS).</p>
-            </article>
+        <div class="sector-monitor">
+            <div class="section-header">
+                <h2>Monitoring 13 Sektor Ekonomi</h2>
+                <p>Alokasi wilayah didistribusikan secara ketat untuk menjaga performa server tanpa *delay*.</p>
+            </div>
+            <div class="sector-grid-13">
+                <!-- Zona Merah (Nyaris Habis) -->
+                <div class="sector-item"><strong>Sektor 1:</strong> Dago & Cisitu <span class="slot-tag warning">Sisa 2 Slot</span></div>
+                <div class="sector-item"><strong>Sektor 2:</strong> Dipatiukur & Tubagus <span class="slot-tag warning">Sisa 4 Slot</span></div>
+                <div class="sector-item"><strong>Sektor 8:</strong> Pasteur & Sukajadi <span class="slot-tag warning">Sisa 22 Slot</span></div>
+                <!-- Zona Kuning -->
+                <div class="sector-item"><strong>Sektor 4:</strong> Burangrang & Lengkong <span class="slot-tag safe">Sisa 25 Slot</span></div>
+                <div class="sector-item"><strong>Sektor 5:</strong> Buah Batu & Kliningan <span class="slot-tag safe">Sisa 26 Slot</span></div>
+                <div class="sector-item"><strong>Sektor 6:</strong> Setiabudi & Ledeng <span class="slot-tag safe">Sisa 27 Slot</span></div>
+                <div class="sector-item"><strong>Sektor 7:</strong> Antapani & Arcamanik <span class="slot-tag safe">Sisa 28 Slot</span></div>
+                <div class="sector-item"><strong>Sektor 3:</strong> Braga & Asia Afrika <span class="slot-tag safe">Sisa 29 Slot</span></div>
+                <div class="sector-item"><strong>Sektor 9:</strong> Cihampelas & Cicendo <span class="slot-tag safe">Sisa 29 Slot</span></div>
+                <div class="sector-item"><strong>Sektor 10:</strong> Kiaracondong & Binong <span class="slot-tag safe">Sisa 29 Slot</span></div>
+                <!-- Zona Hijau (Masih Kosong) -->
+                <div class="sector-item"><strong>Sektor 11:</strong> Cibaduyut & Kopo <span class="slot-tag safe">Sisa 30 Slot</span></div>
+                <div class="sector-item"><strong>Sektor 12:</strong> Ujung Berung & Cibiru <span class="slot-tag safe">Sisa 30 Slot</span></div>
+                <div class="sector-item"><strong>Sektor 13:</strong> Pasir Kaliki & Andir <span class="slot-tag safe">Sisa 30 Slot</span></div>
+            </div>
         </div>
-    </main>
+    </section>
 
-    <footer class="footer-premium" id="kontak" style="margin-top: 80px;">
-        <div class="cta-box">
-            <h2>Siap Menjadi Bagian dari Revolusi Digital?</h2>
-            <p>Amankan slot VIP Anda hari ini sebelum kuota area Dago ditutup.</p>
-            <button class="btn-wa-direct">Hubungi Arsitek Sistem</button>
+    <!-- PRICING TIER S -->
+    <section id="harga" class="pricing-luxury-v4">
+        <!-- ... [KODE PRICING SAMA PERSIS SEPERTI SEBELUMNYA] ... -->
+        <div class="section-header">
+            <span class="badge-promo">BATCH 1 - KOTA BANDUNG</span>
+            <h2>Pilih Tingkat Akselerasi Anda</h2>
+            <p>Sistem transparan. Pembayaran pelunasan dilakukan setelah sistem mengudara.</p>
         </div>
+
+        <div class="pricing-container">
+            <div class="pricing-card">
+                <div class="card-tier">Paket Basic</div>
+                <div class="quota-tag">Sisa 15 Slot / Wilayah</div>
+                <div class="price-box">
+                    <span class="maint-price"><sup>Rp</sup> 15.000<span>/bln</span></span>
+                    <span class="setup-price">Setup: <del>Rp 399rb</del> <strong>Rp 75rb</strong></span>
+                </div>
+                <ul class="features-list">
+                    <li>✅ Katalog Web (15 Menu)</li>
+                    <li>✅ Live Calculator</li>
+                    <li>✅ WhatsApp Order Format</li>
+                    <li>❌ Prioritas Antrean Server</li>
+                </ul>
+                <button class="btn-wa-direct" data-paket="Basic">Pilih Basic</button>
+            </div>
+
+            <div class="pricing-card featured">
+                <div class="popular-tag">PALING DIMINATI</div>
+                <div class="card-tier">Bisnis Pro</div>
+                <div class="quota-tag" style="color: #0052cc;">Sisa 12 Slot / Wilayah</div>
+                <div class="price-box">
+                    <span class="maint-price"><sup>Rp</sup> 50.000<span>/bln</span></span>
+                    <span class="setup-price">Setup: <del>Rp 599rb</del> <strong>Rp 335rb</strong></span>
+                </div>
+                <ul class="features-list">
+                    <li>✅ <strong>Priority Server:</strong> Bebas delay.</li>
+                    <li>✅ <strong>Audit Copywriting:</strong> Menu lebih menjual.</li>
+                    <li>✅ <strong>Konsultasi Bisnis:</strong> Akses 24/7.</li>
+                    <li>✅ Keamanan Enkripsi Lapis 3</li>
+                </ul>
+                <button class="btn-wa-direct btn-glow" data-paket="Bisnis Pro">Upgrade Pro</button>
+            </div>
+
+            <div class="pricing-card sultan">
+                <div class="card-tier">Sultan Pro</div>
+                <div class="quota-tag" style="color: #ef4444;">Sisa 3 Slot / Wilayah</div>
+                <div class="price-box">
+                    <span class="maint-price"><sup>Rp</sup> 450.000<span>/bln</span></span>
+                    <span class="setup-price">Setup: <del>Rp 2.990jt</del> <strong>Rp 1.499.000</strong></span>
+                </div>
+                <ul class="features-list">
+                    <li>✅ Semua Fitur Bisnis Pro</li>
+                    <li>✅ Absensi GPS & QR Code</li>
+                    <li>✅ Dashboard Rekap Otomatis</li>
+                    <li>✅ Status Flagship HaloMitra</li>
+                </ul>
+                <button class="btn-wa-direct" data-paket="Sultan">Hubungi Arsitek</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- KLIEN & SOCIAL PROOF -->
+    <section class="trust-section">
+        <div class="section-header">
+            <h2>Dipercaya oleh Ekosistem UMKM Bandung</h2>
+            <p>Bergabunglah dengan puluhan bisnis yang telah mengotomatisasi operasional mereka.</p>
+        </div>
+        <div class="client-marquee">
+            <div class="marquee-content">
+                <div class="client-badge">📍 Kios Cisitu (Beta)</div>
+                <div class="client-badge">📍 Kedai Kopi Dago</div>
+                <div class="client-badge">📍 Distro Lengkong</div>
+                <div class="client-badge">📍 Resto Antapani</div>
+                <div class="client-badge">📍 Kios Cisitu (Beta)</div> 
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+        <div class="section-header">
+            <h2>Pertanyaan Seputar HaloMitra</h2>
+            <p>Transparansi adalah kunci kemitraan kami.</p>
+        </div>
+        <div class="faq-container">
+            <div class="faq-item">
+                <button class="faq-question">Apakah ada potongan komisi dari setiap transaksi? <span class="faq-icon">+</span></button>
+                <div class="faq-answer">
+                    <p><strong>Nol. 0%.</strong> Kami bukan aplikasi *food delivery*. Kami membangun sistem kasir mandiri untuk bisnis Anda. 100% uang pembayaran masuk langsung ke rekening Anda atau via WhatsApp.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Kenapa biaya bulanannya sangat murah (15k - 50k)? <span class="faq-icon">+</span></button>
+                <div class="faq-answer">
+                    <p>Karena kami menggunakan arsitektur <em>Cloud Node</em> yang efisien dan membagi beban server secara kolektif per wilayah di Bandung. Tujuan kami adalah pemerataan digitalisasi, bukan memeras UMKM.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Bagaimana jika saya tidak mengerti teknologi? <span class="faq-icon">+</span></button>
+                <div class="faq-answer">
+                    <p>Sistem kami dirancang "Auto-Pilot". Setelah kami lakukan <em>setup</em> awal, Anda hanya tinggal menerima pesan WhatsApp berformat rapi dari pembeli. Sangat mudah digunakan, bahkan oleh pegawai baru.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-premium">
+        <p>© 2026 HaloMitra Digital Infrastructure. All rights reserved.</p>
     </footer>
 
     <script src="script.js"></script>

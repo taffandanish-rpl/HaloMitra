@@ -1,607 +1,170 @@
-html {
-    scroll-behavior: smooth;
-}
-/* ============================================================
-   1. RESET & BASE STYLES
-   ============================================================ */
-   :root {
-    --primary-color: #0052cc;    /* Biru Profesional */
-    --secondary-color: #00b8d9;  /* Biru Muda Aksentuasi */
-    --dark-text: #172b4d;       /* Warna Teks Utama */
-    --light-bg: #f4f5f7;        /* Latar Belakang Lembut */
-    --white: #ffffff;
-    --transition: all 0.3s ease;
+:root {
+    --primary: #0f172a;       /* Biru Gelap Profesional (Hostinger Vibe) */
+    --accent: #4338ca;        /* Ungu Nila untuk Call to Action */
+    --accent-glow: rgba(67, 56, 202, 0.4);
+    --bg-light: #f8fafc;
+    --text-dark: #1e293b;
+    --text-gray: #64748b;
+    --border: #e2e8f0;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--text-dark); background: var(--bg-light); line-height: 1.6; overflow-x: hidden; }
 
-body {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    line-height: 1.6;
-    color: var(--dark-text);
-    background-color: var(--white);
-    overflow-x: hidden;
-}
-
-/* ============================================================
-   2. NAVBAR (MODERN & STICKY)
-   ============================================================ */
+/* NAVBAR GLASSMORPHISM */
 .navbar-premium {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    padding: 15px 5%;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: fixed; top: 0; width: 100%; z-index: 1000;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px); border-bottom: 1px solid var(--border);
+    padding: 15px 5%; transition: all 0.3s ease;
 }
+.nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; }
+.logo-area { display: flex; align-items: center; gap: 15px; }
+.logo-img { height: 40px; border-radius: 8px; }
+.brand-text { font-size: 1.4rem; font-weight: 800; color: var(--primary); letter-spacing: -0.5px; }
+.nav-links { display: flex; gap: 30px; list-style: none; align-items: center; }
+.nav-links a { text-decoration: none; color: var(--text-gray); font-weight: 600; font-size: 0.95rem; transition: 0.3s; }
+.nav-links a:hover, .nav-links a.active { color: var(--accent); }
+.btn-demo-nav { background: var(--accent); color: white !important; padding: 10px 20px; border-radius: 50px; }
 
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-}
+/* HERO SECTION */
+.hero-section { padding: 180px 5% 100px; text-align: center; background: linear-gradient(180deg, #ffffff 0%, var(--bg-light) 100%); }
+.hero-content { max-width: 800px; margin: 0 auto; }
+.badge-limited { display: inline-block; background: #fee2e2; color: #ef4444; padding: 6px 16px; border-radius: 50px; font-size: 0.8rem; font-weight: 800; letter-spacing: 0.5px; margin-bottom: 20px; animation: pulse 2s infinite; }
+.hero-title { font-size: 3.8rem; font-weight: 800; line-height: 1.1; margin-bottom: 20px; color: var(--primary); letter-spacing: -1.5px; }
+.highlight-teks { color: var(--accent); }
+.hero-subtitle { font-size: 1.2rem; color: var(--text-gray); margin-bottom: 40px; }
+.hero-buttons { display: flex; gap: 20px; justify-content: center; }
+.btn-primary-large, .btn-secondary-large { padding: 16px 32px; border-radius: 12px; font-weight: 700; text-decoration: none; font-size: 1.1rem; transition: 0.3s; }
+.btn-primary-large { background: var(--accent); color: white; box-shadow: 0 10px 25px var(--accent-glow); }
+.btn-primary-large:hover { transform: translateY(-3px); box-shadow: 0 15px 35px var(--accent-glow); }
+.btn-secondary-large { background: white; color: var(--primary); border: 1px solid var(--border); }
 
-.logo-area {
-    display: flex;
-    align-items: center;
-    gap: 20px; /* Jarak antara logo dan teks HaloMitra */
-}
+/* FOMO & SECTORS */
+.infrastructure-section { max-width: 1200px; margin: 0 auto; padding: 40px 5%; }
+.fomo-tracker { background: white; border-radius: 20px; padding: 30px; box-shadow: 0 10px 40px rgba(0,0,0,0.03); border: 1px solid var(--border); margin-bottom: 60px; }
+.fomo-header { display: flex; justify-content: space-between; margin-bottom: 15px; font-size: 1.1rem; }
+.fomo-count { color: #ef4444; font-weight: 800; }
+.progress-bar-bg { background: #f1f5f9; height: 12px; border-radius: 10px; overflow: hidden; }
+.progress-bar-fill { background: linear-gradient(90deg, #f59e0b, #ef4444); height: 100%; border-radius: 10px; transition: width 1.5s ease; }
+.fomo-note { font-size: 0.85rem; color: var(--text-gray); margin-top: 15px; text-align: center; }
 
-.logo-img {
-    height: 80px; /* Kunci tingginya agar profesional dengan teks */
-    width: auto;
-    border-radius: 20px;
-}
+.sector-grid-13 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin-top: 30px; }
+.sector-item { background: white; border: 1px solid var(--border); padding: 18px; border-radius: 12px; display: flex; justify-content: space-between; align-items: center; font-size: 0.95rem; }
+.slot-tag { font-size: 0.75rem; padding: 4px 10px; border-radius: 8px; font-weight: 700; }
+.warning { background: #fee2e2; color: #ef4444; }
+.safe { background: #dcfce7; color: #16a34a; }
 
-.brand-text {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: var(--primary-color);
-    letter-spacing: -1px;
-}
+/* MEDIA SHOWCASE */
+.media-showcase { margin-top: 60px; text-align: center; }
+.tier-s-media { border-radius: 24px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15); border: 1px solid var(--border); max-width: 900px; }
 
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-}
+/* PRICING TIER S */
+.pricing-luxury-v4 { padding: 100px 5%; background: white; }
+.section-header { text-align: center; margin-bottom: 50px; }
+.section-header h2 { font-size: 2.5rem; color: var(--primary); margin: 15px 0; letter-spacing: -1px; }
+.pricing-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; align-items: center; }
+.pricing-card { background: white; padding: 40px; border-radius: 24px; border: 1px solid var(--border); text-align: left; display: flex; flex-direction: column; position: relative; transition: 0.4s; }
+.pricing-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+.quota-tag { font-size: 0.8rem; font-weight: 700; margin-top: 5px; color: var(--text-gray); }
 
-.nav-links a {
-    text-decoration: none;
-    color: var(--dark-text);
-    font-weight: 600;
-    font-size: 0.95rem;
-    transition: var(--transition);
-}
+/* Anchor & Best Seller Styling */
+.pricing-card.featured { border: 2px solid var(--accent); box-shadow: 0 20px 40px var(--accent-glow); transform: scale(1.05); z-index: 2; }
+.pricing-card.featured:hover { transform: scale(1.05) translateY(-10px); }
+.pricing-card.sultan { background: var(--primary); color: white; }
+.pricing-card.sultan .maint-price, .pricing-card.sultan .setup-price, .pricing-card.sultan .features-list li { color: white; }
+.pricing-card.sultan .quota-tag { color: #fca5a5 !important; }
 
-.nav-links a:hover {
-    color: var(--primary-color);
-}
+.popular-tag { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--accent); color: white; padding: 5px 20px; border-radius: 50px; font-size: 0.8rem; font-weight: 800; }
+.card-tier { font-size: 1.5rem; font-weight: 800; }
+.price-box { margin: 25px 0; border-bottom: 1px solid var(--border); padding-bottom: 25px; }
+.pricing-card.sultan .price-box { border-bottom-color: rgba(255,255,255,0.1); }
+.maint-price { font-size: 2.8rem; font-weight: 800; color: var(--primary); line-height: 1; }
+.maint-price sup { font-size: 1.2rem; top: -1em; }
+.maint-price span { font-size: 1rem; color: var(--text-gray); font-weight: 500; }
+.setup-price { display: block; font-size: 0.95rem; color: var(--text-gray); margin-top: 10px; }
 
-.btn-login-admin {
-    text-decoration: none;
-    color: var(--primary-color);
-    font-weight: 700;
-    margin-right: 20px;
-}
+.features-list { list-style: none; margin-bottom: 40px; flex-grow: 1; }
+.features-list li { margin-bottom: 15px; font-size: 0.95rem; }
+.btn-wa-direct { width: 100%; padding: 15px; border-radius: 12px; font-weight: 700; font-size: 1rem; border: none; cursor: pointer; transition: 0.3s; background: #f1f5f9; color: var(--primary); }
+.pricing-card.featured .btn-wa-direct { background: var(--accent); color: white; }
+.pricing-card.sultan .btn-wa-direct { background: white; color: var(--primary); }
 
-.btn-konsultasi {
-    text-decoration: none;
-    background: var(--primary-color);
-    color: white;
-    padding: 10px 25px;
-    border-radius: 50px;
-    font-weight: 700;
-    box-shadow: 0 4px 15px rgba(0, 82, 204, 0.3);
-    transition: var(--transition);
-}
+@keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.7; } 100% { opacity: 1; } }
 
-.btn-konsultasi:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0, 82, 204, 0.4);
-}
-
-/* ============================================================
-   3. HERO SECTION (HIGH CONVERSION)
-   ============================================================ */
-.hero-section {
-    padding: 160px 5% 100px;
-    background: radial-gradient(circle at top right, #eef2ff, #ffffff);
-    text-align: center;
-}
-
-.hero-content {
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.badge-promo {
-    background: #e3f2fd;
-    color: var(--primary-color);
-    padding: 8px 20px;
-    border-radius: 50px;
-    font-size: 0.85rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.hero-title {
-    font-size: 3.5rem;
-    font-weight: 800;
-    line-height: 1.1;
-    margin: 25px 0;
-    letter-spacing: -2px;
-}
-
-.highlight-teks {
-    color: var(--primary-color);
-    position: relative;
-}
-
-.hero-subtitle {
-    font-size: 1.2rem;
-    color: #6b778c;
-    margin-bottom: 40px;
-}
-
-.hero-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.btn-primary-large {
-    background: var(--primary-color);
-    color: white;
-    border: none;
-    padding: 18px 40px;
-    border-radius: 12px;
-    font-size: 1.1rem;
-    font-weight: 700;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.btn-secondary-large {
-    background: white;
-    color: var(--primary-color);
-    border: 2px solid var(--primary-color);
-    padding: 18px 40px;
-    border-radius: 12px;
-    font-size: 1.1rem;
-    font-weight: 700;
-    cursor: pointer;
-}
-
-.trust-indicators {
-    margin-top: 50px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: #8993a4;
-}
-
-/* ============================================================
-   4. FEATURES GRID
-   ============================================================ */
-.core-features {
-    padding: 100px 5%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.section-header {
-    text-align: center;
-    margin-bottom: 60px;
-}
-
-.section-header h2 {
-    font-size: 2.5rem;
-    font-weight: 800;
-    margin-bottom: 15px;
-}
-
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-.feature-card {
-    background: white;
-    padding: 40px;
-    border-radius: 20px;
-    border: 1px solid #ebecf0;
-    transition: var(--transition);
-}
-
-.feature-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-}
-
-.feature-icon {
-    font-size: 3rem;
-    margin-bottom: 20px;
-}
-
-.feature-card h3 {
-    margin-bottom: 15px;
-    font-size: 1.4rem;
-}
-
-/* ============================================================
-   5. FOOTER & CTA
-   ============================================================ */
-.footer-premium {
-    background: var(--dark-text);
-    color: white;
-    padding: 80px 5% 40px;
-    text-align: center;
-}
-
-.cta-box {
-    background: var(--primary-color);
-    padding: 60px;
-    border-radius: 30px;
-    margin-bottom: 60px;
-}
-
-.btn-wa-direct {
-    background: #25d366;
-    color: white;
-    border: none;
-    padding: 15px 35px;
-    border-radius: 50px;
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin-top: 30px;
-    cursor: pointer;
-}
-
-/* ============================================================
-   6. RESPONSIVE (FOR MOBILE PHONES)
-   ============================================================ */
-/* ============================================================
-   PERBAIKAN MOBILE & RESPONSIVE - ANTI ERROR
-   ============================================================ */
-    /* ============================================================
-   MOBILE PREMIUM NAVIGATION (GLASSMORPHISM)
-   ============================================================ */
-.menu-toggle {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    gap: 6px;
-    z-index: 1001; /* Harus di atas menu yang meluncur */
-}
-
-.menu-toggle .bar {
-    width: 25px;
-    height: 3px;
-    background-color: var(--primary-color);
-    border-radius: 5px;
-    transition: all 0.4s ease-in-out;
-}
-
+/* MOBILE RESPONSIVE */
 @media (max-width: 768px) {
-    .menu-toggle {
-        display: flex;
-    }
-    
-    /* Sembunyikan tombol login/konsultasi di header saat mobile */
-    .nav-actions { 
-        display: none; 
-    }
-
-    /* Sidebar Menu Meluncur dari Kanan */
-    .nav-links {
-        position: fixed;
-        top: 0;
-        right: -100%; /* Disembunyikan di luar layar */
-        height: 100vh;
-        width: 70%;
-        max-width: 300px;
-        background: rgba(255, 255, 255, 0.85); /* Transparan */
-        backdrop-filter: blur(20px); /* Efek kaca buram (Glassmorphism) */
-        -webkit-backdrop-filter: blur(20px);
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        box-shadow: -10px 0 30px rgba(0,0,0,0.1);
-        transition: right 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Animasi memantul elegan */
-        z-index: 1000;
-    }
-
-    /* Saat menu aktif (terbuka) */
-    .nav-links.active {
-        right: 0;
-    }
-
-    .nav-links li {
-        margin: 20px 0;
-        opacity: 0;
-        transform: translateY(20px);
-        transition: all 0.4s ease-in-out;
-    }
-
-    .nav-links.active li {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    /* Delay animasi muncul tiap menu agar mewah */
-    .nav-links.active li:nth-child(1) { transition-delay: 0.1s; }
-    .nav-links.active li:nth-child(2) { transition-delay: 0.2s; }
-    .nav-links.active li:nth-child(3) { transition-delay: 0.3s; }
-    .nav-links.active li:nth-child(4) { transition-delay: 0.4s; }
-
-    .nav-links a {
-        font-size: 1.3rem;
-        font-weight: 700;
-    }
-
-    /* Animasi Hamburger berubah menjadi tanda Silang (X) */
-    .menu-toggle.is-active .bar:nth-child(1) {
-        transform: translateY(9px) rotate(45deg);
-    }
-    .menu-toggle.is-active .bar:nth-child(2) {
-        opacity: 0;
-    }
-    .menu-toggle.is-active .bar:nth-child(3) {
-        transform: translateY(-9px) rotate(-45deg);
-    }
-    
-    .hero-title { font-size: 2.2rem; }
+    .hero-title { font-size: 2.5rem; }
     .hero-buttons { flex-direction: column; }
+    .pricing-card.featured { transform: scale(1); }
+    .pricing-card.featured:hover { transform: translateY(-5px); }
+    .nav-links { display: none; } /* Mobile menu toggle di JS */
 }
-    /* Menu Navigasi tetap muncul dengan ukuran menyesuaikan */
-    .nav-links {
-        display: flex; 
-        gap: 12px;
-        font-size: 0.75rem;
-    }
-    
-    .nav-container {
-        padding: 10px 3%;
-    }
+/* TRUST & MARQUEE SECTION */
+.trust-section { padding: 60px 5%; background: var(--bg-light); text-align: center; }
+.client-marquee { overflow: hidden; white-space: nowrap; max-width: 1000px; margin: 40px auto 0; position: relative; }
+.client-marquee::before, .client-marquee::after { content: ''; position: absolute; top: 0; width: 100px; height: 100%; z-index: 2; }
+.client-marquee::before { left: 0; background: linear-gradient(to right, var(--bg-light), transparent); }
+.client-marquee::after { right: 0; background: linear-gradient(to left, var(--bg-light), transparent); }
+.marquee-content { display: inline-block; animation: scroll 15s linear infinite; }
+.client-badge { display: inline-block; padding: 12px 25px; margin: 0 15px; background: white; border: 1px solid var(--border); border-radius: 50px; font-weight: 700; color: var(--text-gray); box-shadow: 0 4px 10px rgba(0,0,0,0.02); }
 
-    /* Memastikan Mockup HP di halaman Demo tidak terpotong */
-    .mockup-hp {
-        width: 100%;
-        min-width: unset;
-        margin: 20px 0;
-        padding: 15px;
-    }
+@keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-    /* Hero Section di Teknologi agar teks tidak bertumpuk */
-    .tech-hero h1 {
-        font-size: 1.8rem;
-    }
-    
-    .pricing-grid {
-        grid-template-columns: 1fr; /* Harga menumpuk vertikal di HP */
-    }
-}
+/* FAQ ENTERPRISE ACCORDION */
+.faq-section { padding: 80px 5%; max-width: 800px; margin: 0 auto; }
+.faq-item { background: white; border: 1px solid var(--border); border-radius: 12px; margin-bottom: 15px; overflow: hidden; transition: 0.3s; }
+.faq-item:hover { border-color: var(--accent); }
+.faq-question { width: 100%; text-align: left; padding: 20px 25px; background: transparent; border: none; font-size: 1.05rem; font-weight: 700; color: var(--primary); cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+.faq-icon { font-size: 1.5rem; color: var(--accent); font-weight: 400; transition: transform 0.3s ease; }
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; background: #f8fafc; }
+.faq-answer p { padding: 0 25px 25px; color: var(--text-gray); line-height: 1.7; font-size: 0.95rem; margin: 0; }
+.faq-item.active .faq-answer { max-height: 200px; }
+.faq-item.active .faq-icon { transform: rotate(45deg); color: #ef4444; }
+/* DEMO SECTION TIER S */
+.demo-section { padding: 100px 5%; background: var(--bg-light); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.demo-container { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; gap: 50px; flex-wrap: wrap; justify-content: center; }
+.demo-text { flex: 1; min-width: 300px; max-width: 500px; }
+.demo-text h2 { font-size: 2.2rem; color: var(--primary); margin-bottom: 15px; letter-spacing: -1px; }
 
-/* Badge VIP Melayang (Efek Psikologis Mewah) */
-.vip-badge-float {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: linear-gradient(45deg, #ffd700, #ffa500);
-    color: #000;
-    padding: 10px 15px;
-    border-radius: 50px;
-    font-weight: 800;
-    font-size: 0.8rem;
-    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
-    z-index: 9999;
-    animation: bounce 2s infinite;
+/* Mockup HP Mewah */
+.mockup-wrapper { flex: 1; display: flex; justify-content: center; min-width: 300px; }
+.mockup-hp { 
+    width: 320px; height: 580px; background: white; 
+    border-radius: 40px; border: 12px solid #0f172a; 
+    position: relative; overflow: hidden; 
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); 
 }
+.mockup-notch {
+    position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+    width: 120px; height: 25px; background: #0f172a;
+    border-bottom-left-radius: 15px; border-bottom-right-radius: 15px;
+    z-index: 10;
+}
+.katalog-mini { padding: 40px 20px 90px; height: 100%; overflow-y: auto; }
+.grid-produk-mini { display: flex; flex-direction: column; gap: 12px; }
+.kartu-produk-mini { 
+    border: 1px solid var(--border); padding: 12px 15px; 
+    border-radius: 12px; display: flex; justify-content: space-between; 
+    align-items: center; background: #fafbfc;
+}
+.kartu-produk-mini h4 { font-size: 0.9rem; margin-bottom: 3px; color: var(--primary); }
+.harga-mini { color: var(--accent); font-weight: 700; font-size: 0.85rem; }
+.btn-tambah-demo { 
+    background: #e0e7ff; color: var(--accent); border: none; 
+    padding: 6px 12px; border-radius: 8px; font-weight: 700; 
+    font-size: 0.8rem; cursor: pointer; transition: 0.2s;
+}
+.btn-tambah-demo:hover { background: var(--accent); color: white; }
 
-@keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-}
-}
-
-/* ============================================================
-   7. STYLING HALAMAN TEKNOLOGI
-   ============================================================ */
-   .tech-hero {
-    padding: 120px 5% 60px;
-    text-align: center;
-    background: linear-gradient(135deg, #f8faff 0%, #ffffff 100%);
-}
-.tech-hero h1 { font-size: 2.8rem; margin-bottom: 10px; }
-.tech-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    margin-top: 40px;
-}
-.tech-card {
-    background: #f8f9fa; padding: 30px;
-    border-radius: 15px; border-left: 5px solid var(--primary-color);
-}
-.code-preview-section { max-width: 800px; margin: 0 auto; }
-.code-box {
-    background: #1e1e1e; color: #d4d4d4; padding: 30px;
-    border-radius: 12px; font-family: monospace;
-    overflow-x: auto; margin-top: 20px;
-}
-
-/* ============================================================
-   8. STYLING HALAMAN DEMO (MOCKUP HP)
-   ============================================================ */
-.bg-demo { background-color: #f0f2f5; }
-.demo-container {
-    padding: 120px 5% 60px; max-width: 800px;
-    margin: 0 auto; text-align: center;
-}
-.mockup-hp {
-    width: 100%; max-width: 380px; margin: 30px auto 0;
-    background: white; border-radius: 30px;
-    border: 8px solid #2c3e50; min-height: 600px;
-    position: relative; text-align: left; overflow: hidden;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
-}
-.katalog-mini { padding: 20px; padding-bottom: 90px; }
-.kartu-produk-mini {
-    border: 1px solid #eee; padding: 15px; border-radius: 12px;
-    display: flex; justify-content: space-between; align-items: center;
-    margin-bottom: 15px;
-}
-.harga-mini { color: #e67e22; font-weight: bold; }
-.btn-tambah-demo {
-    background: #e8f0fe; color: var(--primary-color);
-    border: none; padding: 8px 15px; border-radius: 8px; cursor: pointer;
-}
+/* Keranjang Bawah HP */
 .keranjang-demo {
-    position: absolute; bottom: 0; width: 100%;
-    background: white; padding: 15px 20px;
-    display: flex; justify-content: space-between; align-items: center;
-    box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
+    position: absolute; bottom: 0; left: 0; width: 100%;
+    background: white; padding: 15px 20px; display: flex; 
+    justify-content: space-between; align-items: center;
+    box-shadow: 0 -10px 20px rgba(0,0,0,0.05); border-top: 1px solid var(--border);
 }
-#btn-demo-wa {
-    background: #25d366; color: white; border: none;
-    padding: 10px 20px; border-radius: 20px; font-weight: bold; cursor: pointer;
+#btn-demo-wa { 
+    background: #25d366; color: white; border: none; 
+    padding: 10px 20px; border-radius: 20px; font-weight: 800; cursor: pointer; 
 }
-/* Tech Page Luxury Styles */
-.tech-header-premium {
-    text-align: center; margin-bottom: 60px;
-}
-.badge-tech {
-    background: var(--primary-color); color: white;
-    padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: bold;
-}
-.tech-grid-luxury {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px; margin-bottom: 80px;
-}
-.tech-card-glass {
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 40px; border-radius: 24px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    transition: var(--transition);
-}
-.tech-card-glass:hover {
-    transform: translateY(-10px);
-    border-color: var(--primary-color);
-}
-.tech-icon-circle {
-    font-size: 2rem; margin-bottom: 20px;
-}
-.tech-list-small {
-    margin-top: 15px; padding-left: 20px; font-size: 0.9rem; color: #666;
-}
-/* Tech Page Luxury Styles */
-.tech-header-premium {
-    text-align: center; margin-bottom: 60px;
-}
-.badge-tech {
-    background: var(--primary-color); color: white;
-    padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: bold;
-}
-.tech-grid-luxury {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px; margin-bottom: 80px;
-}
-.tech-card-glass {
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 40px; border-radius: 24px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    transition: var(--transition);
-}
-.tech-card-glass:hover {
-    transform: translateY(-10px);
-    border-color: var(--primary-color);
-}
-.tech-icon-circle {
-    font-size: 2rem; margin-bottom: 20px;
-}
-.tech-list-small {
-    margin-top: 15px; padding-left: 20px; font-size: 0.9rem; color: #666;
-}
-/* ============================================================
-   HALOMITRA HYPER-LUXURY PRICING V4 - ADD THIS AT THE BOTTOM
-   ============================================================ */
-   .pricing-luxury-v4 { padding: 100px 5%; background: linear-gradient(180deg, #ffffff 0%, #f0f4f8 100%); margin-top: 80px;}
-
-   .pricing-container {
-       display: grid;
-       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-       gap: 30px;
-       margin-top: 50px;
-   }
-   
-   .pricing-card {
-       background: white;
-       padding: 40px 30px;
-       border-radius: 24px;
-       border: 1px solid #e2e8f0;
-       text-align: center;
-       transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-       display: flex;
-       flex-direction: column;
-       position: relative;
-   }
-   
-   .pricing-card:hover { transform: translateY(-12px); box-shadow: 0 25px 50px -12px rgba(0, 82, 204, 0.1); border-color: #0052cc; }
-   
-   /* Paket Featured (Bisnis Pro) */
-   .pricing-card.featured {
-       border: 2px solid #0052cc;
-       background: linear-gradient(145deg, #ffffff, #f0f7ff);
-       z-index: 2;
-       transform: scale(1.03);
-   }
-   
-   .pricing-card.featured:hover { transform: scale(1.03) translateY(-12px); }
-   
-   /* Paket Sultan (Dark Theme) */
-   .pricing-card.sultan { border: 2px solid #172b4d; background: #fafbfc; }
-   
-   /* Box Harga */
-   .price-box { margin: 25px 0; border-bottom: 1px solid #edf2f7; padding-bottom: 20px; }
-   .maint-price { font-size: 2.2rem; font-weight: 800; color: #0052cc; display: block; }
-   .maint-price span { font-size: 0.9rem; color: #64748b; font-weight: 400; }
-   .setup-price { font-size: 0.85rem; color: #475569; display: block; margin-top: 5px; }
-   .setup-price strong { color: #1e293b; font-weight: 700; }
-   
-   /* List Fitur */
-   .features-list { list-style: none; text-align: left; margin-bottom: 30px; flex-grow: 1; padding-left: 0;}
-   .features-list li { margin-bottom: 14px; font-size: 0.88rem; color: #475569; display: flex; align-items: center; gap: 10px; }
-   
-   /* Animasi Tombol Glow */
-   .btn-glow {
-       background: #0052cc !important; color: white !important;
-       box-shadow: 0 0 20px rgba(0, 82, 204, 0.4);
-       animation: pulseGlow 2s infinite;                             
-   }                                                                 
-   
-   @keyframes pulseGlow {
-       0% { box-shadow: 0 0 0 0 rgba(0, 82, 204, 0.7); }
-       70% { box-shadow: 0 0 0 15px rgba(0, 82, 204, 0); }
-       100% { box-shadow: 0 0 0 0 rgba(0, 82, 204, 0); }
-   }
-   
-   /* SOP SECTION STYLING */
-   .sop-container { margin-top: 100px; background: #172b4d; color: white; padding: 50px 40px; border-radius: 30px; text-align: center;}
-   .sop-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-top: 40px; }
-   .sop-item strong { display: block; font-size: 1.2rem; margin-bottom: 10px; color: #00b8d9; }
-   .sop-item p { font-size: 0.9rem; opacity: 0.8; line-height: 1.6; }
