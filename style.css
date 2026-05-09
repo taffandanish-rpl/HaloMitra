@@ -20,7 +20,7 @@ body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--text-dark); ba
 }
 .nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; }
 .logo-area { display: flex; align-items: center; gap: 15px; }
-.logo-img { height: 40px; border-radius: 8px; }
+.logo-img { height: 40px; border-radius: 25px; }
 .brand-text { font-size: 1.4rem; font-weight: 800; color: var(--primary); letter-spacing: -0.5px; }
 .nav-links { display: flex; gap: 30px; list-style: none; align-items: center; }
 .nav-links a { text-decoration: none; color: var(--text-gray); font-weight: 600; font-size: 0.95rem; transition: 0.3s; }
