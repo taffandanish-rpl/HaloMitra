@@ -1,181 +1,96 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Nomor WhatsApp Arsitek (Pastikan nomor ini aktif besok)
+document.addEventListener('DOMContentLoaded', function() {
+    // Nomor WhatsApp Arsitek / CEO
     const WHATSAPP_NUMBER = "6282312559796";
+    
+    // --- 1. LOGIKA MODAL KONSULTASI TRANSOARAN ---
+    const modal = document.getElementById('order-modal');
+    const modalText = document.getElementById('modal-text');
+    const btnClose = document.getElementById('btn-modal-close');
+    const btnConfirm = document.getElementById('btn-modal-confirm');
+    let targetPaket = "";
 
-    // --- 0. CUSTOM MODAL ENGINE (PENGHANCUR ALERT BROWSER) ---
-    const modalOverlay = document.getElementById('halomitra-modal');
-    const modalTitle = document.getElementById('modal-title');
-    const modalMessage = document.getElementById('modal-message');
-    const modalIcon = document.getElementById('modal-icon');
-    const btnCancel = document.getElementById('modal-btn-cancel');
-    const btnConfirm = document.getElementById('modal-btn-confirm');
-    let confirmCallback = null;
-
-    function showModal(title, message, icon, isAlert = false, onConfirm = null) {
-        modalTitle.innerText = title;
-        modalMessage.innerText = message;
-        modalIcon.innerText = icon;
-        
-        if (isAlert) {
-            btnCancel.style.display = 'none';
-            btnConfirm.innerText = 'Mengerti';
-            btnConfirm.style.width = '100%';
-        } else {
-            btnCancel.style.display = 'block';
-            btnConfirm.innerText = 'Lanjutkan';
-            btnConfirm.style.width = 'auto';
-        }
-
-        confirmCallback = onConfirm;
-        modalOverlay.classList.add('active');
-    }
-
-    function closeModal() {
-        modalOverlay.classList.remove('active');
-        confirmCallback = null;
-    }
-
-    btnCancel.addEventListener('click', closeModal);
-    btnConfirm.addEventListener('click', () => {
-        if (confirmCallback) confirmCallback();
-        closeModal();
-    });
-
-    // --- 1. LOGIKA TOMBOL HARGA (EKSEKUSI FOMO VIP) ---
-    const btnPaket = document.querySelectorAll('.btn-wa-direct');
-    btnPaket.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            const paket = btn.getAttribute('data-paket');
-            const originalText = btn.innerText;
-            
-            btn.innerText = "⏳ Sinkronisasi Server...";
-            btn.style.opacity = "0.8";
-            btn.disabled = true;
-
-            // Simulasi loading 0.8 detik untuk efek psikologis "sistem sedang bekerja"
-            setTimeout(() => {
-                showModal(
-                    "Verifikasi Antrean Server",
-                    `Slot VIP untuk Paket ${paket} di wilayah Anda masih tersedia. Lanjutkan reservasi ke WhatsApp Arsitek Sistem?`,
-                    "🔐",
-                    false, // isAlert = false (butuh konfirmasi)
-                    () => {
-                        let msg = `Halo Arsitek Sistem HaloMitra,\n\nSaya tertarik mengamankan *Slot VIP Paket ${paket}* di wilayah saya.\nMohon info prosedur tahapan integrasi sistemnya.`;
-                        window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
-                    }
-                );
-                btn.innerText = originalText;
-                btn.style.opacity = "1";
-                btn.disabled = false;
-            }, 800);
+    // Membuka modal saat tombol paket ditekan
+    document.querySelectorAll('.btn-trigger-modal').forEach(function(button) {
+        button.addEventListener('click', function() {
+            targetPaket = button.getAttribute('data-paket');
+            modalText.innerText = "Apakah Anda ingin melanjutkan koordinasi pendaftaran " + targetPaket + " untuk warung/kios Anda bersama Founder HaloMitra?";
+            modal.classList.add('active');
         });
     });
 
-    // --- 2. LOGIKA FAQ ACCORDION ---
-    const faqItems = document.querySelectorAll('.faq-item');
-    faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
-        question.addEventListener('click', () => {
-            faqItems.forEach(otherItem => {
-                if (otherItem !== item) {
-                    otherItem.classList.remove('active');
-                }
-            });
-            item.classList.toggle('active');
-        });
+    // Menutup modal
+    btnClose.addEventListener('click', function() {
+        modal.classList.remove('active');
+    });
+    
+    // Konfirmasi dan lanjut ke WhatsApp
+    btnConfirm.addEventListener('click', function() {
+        const message = "Halo Founder HaloMitra,\n\nSaya ingin berkonsultasi mengenai pengaktifan *" + targetPaket + "* dengan skema jujur tanpa komisi untuk usaha saya. Mohon arahan jadwal tatap mukanya.";
+        window.open("https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message), '_blank');
+        modal.classList.remove('active');
     });
 
-    // --- 3. LOGIKA LIVE DEMO KERANJANG (INTERAKSI HALUS) ---
+    // --- 2. LOGIKA KERANJANG DEMO (LIVE CALCULATOR) ---
     let cart = [];
-    const btnTambah = document.querySelectorAll('.btn-tambah-demo');
-    const totalItemEl = document.getElementById('demo-total-item');
-    const totalHargaEl = document.getElementById('demo-total-harga');
-    const btnWA = document.getElementById('btn-demo-wa');
+    const countEl = document.getElementById('demo-count');
+    const priceEl = document.getElementById('demo-price');
 
-    function updateUI() {
-        const totalHarga = cart.reduce((sum, item) => sum + item.harga, 0);
-        totalItemEl.innerText = `${cart.length} Item`;
-        totalHargaEl.innerText = `Rp ${totalHarga.toLocaleString('id-ID')}`;
-        
-        // Animasi denyut halus pada angka
-        totalHargaEl.style.transform = "scale(1.15)";
-        totalHargaEl.style.color = "#4338ca";
-        setTimeout(() => {
-            totalHargaEl.style.transform = "scale(1)";
-            totalHargaEl.style.color = "#0f172a";
-        }, 200);
-    }
-
-    btnTambah.forEach(button => {
-        button.addEventListener('click', () => {
-            const item = {
-                nama: button.getAttribute('data-nama'),
-                harga: parseInt(button.getAttribute('data-harga'))
-            };
-            cart.push(item);
+    document.querySelectorAll('.btn-tambah-demo').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            const nama = btn.getAttribute('data-nama');
+            const harga = parseInt(btn.getAttribute('data-harga'));
             
-            button.innerText = "✓ Masuk Keranjang";
-            button.style.background = "#22c55e"; // Hijau Premium
-            button.style.color = "white";
+            // Masukkan item ke array keranjang
+            cart.push({ nama: nama, harga: harga });
             
-            setTimeout(() => {
-                button.innerText = "+ Tambah";
-                button.style.background = "#e0e7ff";
-                button.style.color = "#4338ca";
-            }, 800);
+            // Efek visual tombol sukses ditekan
+            const oldText = btn.innerText;
+            btn.innerText = "✓ Masuk";
+            btn.style.background = "#dcfce7";
+            btn.style.color = "#16a34a";
+            
+            setTimeout(function() {
+                btn.innerText = oldText;
+                btn.style.background = "#eff6ff";
+                btn.style.color = "var(--accent)";
+            }, 600);
 
-            updateUI();
+            // Hitung ulang total
+            let totalHarga = 0;
+            for (let i = 0; i < cart.length; i++) {
+                totalHarga += cart[i].harga;
+            }
+
+            // Update teks di keranjang
+            countEl.innerText = cart.length + " Menu";
+            priceEl.innerText = "Rp " + totalHarga.toLocaleString('id-ID');
         });
     });
 
-    btnWA.addEventListener('click', () => {
-        if (cart.length === 0) {
-            showModal(
-                "Keranjang Kosong",
-                "Anda belum memilih menu. Silakan uji coba tombol '+ Tambah' di katalog terlebih dahulu.",
-                "🛒",
-                true // isAlert = true (hanya tombol Mengerti)
-            );
+    // --- 3. LOGIKA KIRIM PESANAN DEMO KE WHATSAPP ---
+    document.getElementById('btn-demo-wa').addEventListener('click', function() {
+        if(cart.length === 0) {
+            alert("Silakan klik '+ Tambah' pada menu terlebih dahulu untuk mencoba simulasi.");
             return;
         }
         
-        let pesan = "Halo Kios Cisitu (Demo), saya pesanan otomatis dari web:\n\n";
-        cart.forEach(item => {
-            pesan += `- ${item.nama} (Rp ${item.harga.toLocaleString('id-ID')})\n`;
-        });
+        let textOrder = "Halo Kios (Simulasi Demo Web),\nBerikut rincian pesanan saya:\n\n";
+        let total = 0;
         
-        const total = cart.reduce((sum, item) => sum + item.harga, 0);
-        pesan += `\n*Total Tagihan: Rp ${total.toLocaleString('id-ID')}*`;
-        pesan += `\n\n*Catatan: Ini adalah pesanan uji coba dari Live Demo HaloMitra.*`;
+        for (let i = 0; i < cart.length; i++) {
+            textOrder += "- " + cart[i].nama + " (Rp " + cart[i].harga.toLocaleString('id-ID') + ")\n";
+            total += cart[i].harga;
+        }
         
-        const urlAman = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(pesan)}`;
-        window.open(urlAman, '_blank');
-        
-        // Kosongkan keranjang setelah demo berhasil
-        cart = [];
-        updateUI();
-    });
+        textOrder += "\n*Total Tagihan: Rp " + total.toLocaleString('id-ID') + "*";
+        textOrder += "\n\n_Catatan: Ini adalah simulasi pengiriman pesanan dari demo HaloMitra._";
 
-    // --- 4. MOBILE MENU TOGGLE ---
-    const mobileMenu = document.getElementById('mobile-menu');
-    const navLinks = document.getElementById('nav-links');
-    
-    if (mobileMenu) {
-        mobileMenu.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            if (navLinks.classList.contains('active')) {
-                navLinks.style.display = 'flex';
-                navLinks.style.flexDirection = 'column';
-                navLinks.style.position = 'absolute';
-                navLinks.style.top = '70px';
-                navLinks.style.left = '0';
-                navLinks.style.width = '100%';
-                navLinks.style.background = 'rgba(255, 255, 255, 0.95)';
-                navLinks.style.padding = '20px';
-                navLinks.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
-            } else {
-                navLinks.style.display = 'none';
-            }
-        });
-    }
+        // Buka tab WhatsApp baru
+        window.open("https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(textOrder), '_blank');
+        
+        // Reset keranjang setelah menekan kirim
+        cart = [];
+        countEl.innerText = "0 Menu";
+        priceEl.innerText = "Rp 0";
+    });
 });
