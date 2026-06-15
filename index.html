@@ -2,10 +2,13 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="HaloMitra - Infrastruktur Digital Mandiri UMKM Bandung. 0% Komisi. Garansi Harga Terkunci 6 Tahun.">
-    <title>HaloMitra | Solusi Digital Mandiri UMKM Bandung</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=2.0">
+    <meta name="description" content="HaloMitra - Program VIP Percontohan 15 UMKM Bandung. 0% Komisi. Garansi Harga Terkunci 6 Tahun.">
+    <title>HaloMitra | 15 VIP Percontohan UMKM Bandung</title>
     
+    <!-- Favicon Otomatis -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -17,6 +20,7 @@
             --accent: #2563eb;
             --accent-light: #3b82f6;
             --success: #16a34a;
+            --warning: #f59e0b;
             --bg-light: #f8fafc;
             --bg-white: #ffffff;
             --text-dark: #1e293b;
@@ -25,13 +29,7 @@
             --radius-premium: 16px;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             color: var(--text-dark);
@@ -41,108 +39,88 @@
         }
 
         .navbar-premium {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
-            padding: 15px 5%;
+            position: fixed; top: 0; width: 100%; z-index: 1000;
+            background: rgba(255,255,255,0.85); backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(226,232,240,0.8); padding: 15px 5%;
         }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
+        .nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; }
         .logo-area { display: flex; align-items: center; gap: 12px; }
         .brand-text { font-size: 1.4rem; font-weight: 800; color: var(--primary); letter-spacing: -0.8px; }
         .brand-text span { color: var(--accent); }
-
         .nav-links { display: flex; gap: 30px; list-style: none; align-items: center; }
-        .nav-links a { text-decoration: none; color: var(--text-gray); font-weight: 600; font-size: 0.95rem; transition: 0.2s ease; }
+        .nav-links a { text-decoration: none; color: var(--text-gray); font-weight: 600; font-size: 0.95rem; transition: 0.2s; }
         .nav-links a:hover, .nav-links a.active { color: var(--accent); }
 
         .hero-section {
-            padding: 180px 5% 100px;
-            text-align: center;
+            padding: 180px 5% 80px; text-align: center;
             background: radial-gradient(circle at top, #1e293b 0%, var(--primary-dark) 100%);
-            position: relative;
-            color: #ffffff;
+            color: #fff; position: relative;
         }
-
         .hero-content { position: relative; max-width: 850px; margin: 0 auto; z-index: 2; }
-        .badge-mission { display: inline-block; background: rgba(37, 99, 235, 0.15); color: #93c5fd; border: 1px solid rgba(37, 99, 235, 0.3); padding: 8px 18px; border-radius: 50px; font-size: 0.8rem; font-weight: 700; margin-bottom: 25px; }
-        .hero-title { font-size: 3.5rem; font-weight: 800; line-height: 1.2; margin-bottom: 25px; letter-spacing: -1.5px; }
-        .highlight-text { color: #60a5fa; background: linear-gradient(to right, #93c5fd, #2563eb); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero-subtitle { font-size: 1.2rem; color: #94a3b8; margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto; }
+        .badge-mission { display: inline-block; background: rgba(37,99,235,0.15); color: #93c5fd; border: 1px solid rgba(37,99,235,0.3); padding: 8px 18px; border-radius: 50px; font-size: 0.8rem; font-weight: 700; margin-bottom: 25px; }
+        .hero-title { font-size: 3.2rem; font-weight: 800; line-height: 1.2; margin-bottom: 25px; letter-spacing: -1.5px; }
+        .highlight-text { background: linear-gradient(to right, #93c5fd, #2563eb); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero-subtitle { font-size: 1.15rem; color: #94a3b8; margin-bottom: 40px; max-width: 650px; margin-left: auto; margin-right: auto; }
         .hero-buttons { display: flex; gap: 20px; justify-content: center; }
-
-        .btn-primary, .btn-secondary { padding: 14px 32px; border-radius: 10px; font-weight: 700; text-decoration: none; font-size: 1rem; transition: all 0.2s ease; display: inline-block; cursor: pointer; border: none; }
-        .btn-primary { background: var(--accent); color: white; box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3); }
+        .btn-primary, .btn-secondary { padding: 14px 32px; border-radius: 10px; font-weight: 700; text-decoration: none; font-size: 1rem; transition: 0.2s; cursor: pointer; border: none; display: inline-block; }
+        .btn-primary { background: var(--accent); color: white; box-shadow: 0 4px 14px rgba(37,99,235,0.3); }
         .btn-primary:hover { background: var(--accent-light); transform: translateY(-2px); }
-        .btn-secondary { background: rgba(255, 255, 255, 0.05); color: white; border: 1px solid rgba(255, 255, 255, 0.15); }
-        .btn-secondary:hover { background: rgba(255, 255, 255, 0.1); transform: translateY(-2px); }
+        .btn-secondary { background: rgba(255,255,255,0.05); color: white; border: 1px solid rgba(255,255,255,0.15); }
+        .btn-secondary:hover { background: rgba(255,255,255,0.1); transform: translateY(-2px); }
 
-        .manifesto-section { padding: 80px 5%; background: var(--bg-white); border-bottom: 1px solid var(--border); }
+        .manifesto-section { padding: 70px 5%; background: var(--bg-white); border-bottom: 1px solid var(--border); }
         .container-box { max-width: 1000px; margin: 0 auto; }
         .manifesto-card { background: var(--bg-light); border-left: 4px solid var(--accent); padding: 40px; border-radius: 0 var(--radius-premium) var(--radius-premium) 0; }
         .manifesto-card h2 { font-size: 1.8rem; color: var(--primary); margin-bottom: 15px; font-weight: 800; }
         .manifesto-card p { color: var(--text-dark); font-size: 1.05rem; margin-bottom: 15px; text-align: justify; }
 
-        .demo-section { padding: 100px 5%; background: var(--bg-light); border-bottom: 1px solid var(--border); }
-        .demo-container { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; gap: 60px; flex-wrap: wrap; justify-content: center; }
-        .demo-text { flex: 1; min-width: 300px; max-width: 500px; }
-        .demo-text h2 { font-size: 2.2rem; color: var(--primary); margin-bottom: 20px; font-weight: 800; }
+        .demo-section { padding: 80px 5%; background: var(--bg-light); border-bottom: 1px solid var(--border); }
+        .demo-container { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; gap: 50px; flex-wrap: wrap; justify-content: center; }
+        .demo-text { flex: 1; min-width: 280px; max-width: 500px; }
+        .demo-text h2 { font-size: 2rem; color: var(--primary); margin-bottom: 20px; font-weight: 800; }
         .features-list { list-style: none; margin-top: 20px; }
         .features-list li { margin-bottom: 12px; font-size: 1rem; color: var(--text-dark); display: flex; align-items: center; gap: 10px; }
-
-        .mockup-wrapper { flex: 1; display: flex; justify-content: center; min-width: 300px; }
-        .mockup-hp { width: 325px; height: 580px; background: white; border-radius: 40px; border: 12px solid #0f172a; position: relative; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
-        .mockup-notch { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 120px; height: 25px; background: #0f172a; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; z-index: 12; }
+        .mockup-wrapper { flex: 1; display: flex; justify-content: center; min-width: 280px; }
+        .mockup-hp { width: 310px; height: 560px; background: white; border-radius: 40px; border: 12px solid #0f172a; position: relative; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .mockup-notch { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 110px; height: 25px; background: #0f172a; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; z-index: 12; }
         .katalog-mini { padding: 40px 16px 85px; height: 100%; overflow-y: auto; }
         .grid-produk-mini { display: flex; flex-direction: column; gap: 12px; margin-top: 15px; }
-        .kartu-produk-mini { border: 1px solid var(--border); padding: 12px 14px; border-radius: 12px; display: flex; justify-content: space-between; align-items: center; background: #ffffff; }
+        .kartu-produk-mini { border: 1px solid var(--border); padding: 12px 14px; border-radius: 12px; display: flex; justify-content: space-between; align-items: center; background: #fff; }
         .kartu-produk-mini h4 { font-size: 0.9rem; color: var(--primary); margin-bottom: 4px; }
         .harga-mini { color: var(--accent); font-weight: 700; font-size: 0.85rem; }
-        
-        .btn-tambah-demo { background: #eff6ff; color: var(--accent); border: none; padding: 6px 12px; border-radius: 8px; font-weight: 700; font-size: 0.8rem; cursor: pointer; transition: all 0.2s; }
+        .btn-tambah-demo { background: #eff6ff; color: var(--accent); border: none; padding: 6px 12px; border-radius: 8px; font-weight: 700; font-size: 0.8rem; cursor: pointer; transition: 0.2s; }
         .keranjang-demo { position: absolute; bottom: 0; left: 0; width: 100%; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border); z-index: 10; }
         #btn-demo-wa { background: var(--success); color: white; border: none; padding: 10px 18px; border-radius: 30px; font-weight: 700; cursor: pointer; font-size: 0.85rem; }
 
-        .distrik-section { padding: 90px 5%; background: var(--bg-white); border-bottom: 1px solid var(--border); }
-        .section-header { text-align: center; margin-bottom: 50px; }
-        .section-header h2 { font-size: 2.2rem; color: var(--primary); font-weight: 800; margin-bottom: 15px; }
-        .grid-distrik { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; max-width: 1200px; margin: 0 auto; }
-        .card-distrik { background: var(--bg-light); border: 1px solid var(--border); padding: 20px; border-radius: 12px; display: flex; flex-direction: column; gap: 8px; }
-        .card-distrik strong { color: var(--primary); font-size: 1.05rem; }
-        .status-ready { font-size: 0.8rem; color: var(--accent); font-weight: 700; }
+        .vip-section { padding: 80px 5%; background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%); border-bottom: 1px solid var(--border); }
+        .vip-header { text-align: center; margin-bottom: 40px; }
+        .vip-header h2 { font-size: 2.2rem; color: var(--primary); font-weight: 800; margin-bottom: 10px; }
+        .vip-header .badge-limit { background: var(--warning); color: #0f172a; font-weight: 800; padding: 6px 20px; border-radius: 30px; font-size: 0.9rem; display: inline-block; }
+        .progress-container { max-width: 400px; margin: 15px auto 0; background: #e2e8f0; height: 10px; border-radius: 10px; overflow: hidden; }
+        .progress-fill { width: 0%; height: 100%; background: var(--accent); border-radius: 10px; transition: width 0.4s ease; }
 
-        .pricing-section { padding: 100px 5%; background: var(--bg-light); }
-        .pricing-container { display: flex; flex-wrap: wrap; gap: 30px; max-width: 1200px; margin: 40px auto 0; justify-content: center; align-items: stretch; }
-        .pricing-card { background: var(--bg-white); padding: 40px 30px; border-radius: 20px; border: 1px solid var(--border); flex: 1; min-width: 300px; max-width: 360px; display: flex; flex-direction: column; position: relative; transition: transform 0.2s ease; }
+        .pricing-vip { display: flex; flex-wrap: wrap; gap: 25px; max-width: 1200px; margin: 30px auto 0; justify-content: center; }
+        .pricing-card { background: var(--bg-white); padding: 35px 25px; border-radius: 20px; border: 1px solid var(--border); flex: 1; min-width: 260px; max-width: 330px; display: flex; flex-direction: column; position: relative; transition: transform 0.2s; }
         .pricing-card:hover { transform: translateY(-5px); }
-        .pricing-card.featured { border: 2px solid var(--accent); box-shadow: 0 10px 30px rgba(37, 99, 235, 0.08); }
-        .badge-featured { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--accent); color: white; padding: 4px 16px; border-radius: 30px; font-size: 0.75rem; font-weight: 700; }
-        
-        .tier-name { font-size: 1.3rem; font-weight: 800; color: var(--primary); margin-bottom: 15px; }
-        .price-box { margin-bottom: 25px; padding-bottom: 25px; border-bottom: 1px solid var(--border); }
-        .main-price { font-size: 2.5rem; font-weight: 800; color: var(--primary); }
-        .main-price span { font-size: 0.9rem; color: var(--text-gray); }
+        .pricing-card.featured { border: 2px solid var(--accent); box-shadow: 0 10px 30px rgba(37,99,235,0.08); }
+        .badge-featured { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--accent); color: white; padding: 4px 16px; border-radius: 30px; font-size: 0.7rem; font-weight: 700; }
+        .tier-name { font-size: 1.2rem; font-weight: 800; color: var(--primary); margin-bottom: 15px; }
+        .price-box { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--border); }
+        .main-price { font-size: 2.3rem; font-weight: 800; color: var(--primary); }
+        .main-price span { font-size: 0.85rem; color: var(--text-gray); }
         .setup-cost { display: block; font-size: 0.9rem; color: var(--text-gray); margin-top: 5px; }
-        .pricing-features { list-style: none; margin-bottom: 35px; flex-grow: 1; }
-        .pricing-features li { font-size: 0.95rem; margin-bottom: 12px; color: var(--text-dark); }
-        
+        .pricing-features { list-style: none; margin-bottom: 25px; flex-grow: 1; }
+        .pricing-features li { font-size: 0.9rem; margin-bottom: 10px; color: var(--text-dark); }
         .btn-order { width: 100%; padding: 12px; border-radius: 8px; border: none; font-weight: 700; font-size: 0.95rem; cursor: pointer; background: #f1f5f9; color: var(--primary); }
         .pricing-card.featured .btn-order { background: var(--accent); color: white; }
+        .slot-remaining { font-size: 0.75rem; color: var(--accent); font-weight: 700; margin-top: 8px; text-align: center; }
 
-        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(8px); z-index: 9999; display: flex; justify-content: center; align-items: center; opacity: 0; pointer-events: none; transition: opacity 0.2s ease; }
+        .coming-soon-section { padding: 40px 5%; background: var(--bg-white); text-align: center; border-bottom: 1px solid var(--border); }
+        .coming-soon-section h3 { color: var(--text-gray); font-weight: 600; font-size: 1rem; letter-spacing: 1px; }
+
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15,23,42,0.6); backdrop-filter: blur(8px); z-index: 9999; display: flex; justify-content: center; align-items: center; opacity: 0; pointer-events: none; transition: 0.2s; }
         .modal-overlay.active { opacity: 1; pointer-events: auto; }
-        .modal-box { background: #ffffff; padding: 35px; border-radius: 20px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 20px 40px rgba(0,0,0,0.15); border: 1px solid var(--border); }
+        .modal-box { background: #fff; padding: 35px; border-radius: 20px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
         .modal-box h3 { font-size: 1.3rem; color: var(--primary); margin-bottom: 10px; font-weight: 800; }
         .modal-box p { font-size: 0.95rem; color: var(--text-gray); margin-bottom: 25px; }
         .modal-actions { display: flex; gap: 10px; }
@@ -153,9 +131,9 @@
         .footer-clean { background: var(--primary-dark); padding: 30px 5%; text-align: center; color: #64748b; font-size: 0.9rem; }
 
         @media (max-width: 768px) {
-            .hero-title { font-size: 2.3rem; }
+            .hero-title { font-size: 2.2rem; }
             .hero-buttons { flex-direction: column; gap: 12px; }
-            .pricing-container { flex-direction: column; align-items: center; }
+            .pricing-vip { flex-direction: column; align-items: center; }
             .pricing-card { max-width: 100%; width: 100%; }
             .nav-links { display: none; }
         }
@@ -170,21 +148,21 @@
             </div>
             <ul class="nav-links">
                 <li><a href="#beranda" class="active">Beranda</a></li>
-                <li><a href="#misi">Misi Kami</a></li>
-                <li><a href="#demo">Demo Sistem</a></li>
-                <li><a href="#harga">Harga</a></li>
+                <li><a href="#misi">Misi</a></li>
+                <li><a href="#demo">Demo</a></li>
+                <li><a href="#vip">15 VIP</a></li>
             </ul>
         </div>
     </nav>
 
     <header id="beranda" class="hero-section">
         <div class="hero-content">
-            <span class="badge-mission">🛡️ GERAKAN INTEGRITAS & MANDIRI UMKM</span>
-            <h1 class="hero-title">Infrastruktur Digital Warung,<br><span class="highlight-text">0% Potongan Komisi.</span></h1>
-            <p class="hero-subtitle">Membangun katalog web mandiri dan otomasi sistem pesanan langsung ke WhatsApp Anda. Tanpa perantara, tanpa memotong margin keuntungan laci warung.</p>
+            <span class="badge-mission">🛡️ PROGRAM PERCONTOHAN 15 UMKM BANDUNG</span>
+            <h1 class="hero-title">Katalog Digital Mandiri,<br><span class="highlight-text">0% Potongan Komisi.</span></h1>
+            <p class="hero-subtitle">15 warung pertama akan menjadi fondasi utama ekosistem HaloMitra. Dapatkan garansi harga terkunci 6 tahun dan pendampingan langsung dari Founder.</p>
             <div class="hero-buttons">
-                <a href="#harga" class="btn-primary">Lihat Skema Transparan</a>
-                <a href="#demo" class="btn-secondary">Coba Demo Sistem</a>
+                <a href="#vip" class="btn-primary">Lihat 15 Slot VIP</a>
+                <a href="#demo" class="btn-secondary">Coba Demo</a>
             </div>
         </div>
     </header>
@@ -192,9 +170,9 @@
     <section id="misi" class="manifesto-section">
         <div class="container-box">
             <div class="manifesto-card">
-                <h2>Komitmen Jalur Jujur</h2>
-                <p>Kami percaya bisnis yang bertahan lama dibangun di atas pondasi kejujuran mutlak. Oleh karena itu, kami membersihkan seluruh sistem dari data antrean tiruan ataupun indikator psikologis buatan. Kami memulai halaman baru ini dari angka <strong>0 (Nol)</strong> antrean riil bersama Anda.</p>
-                <p>Niat utama HaloMitra adalah menyediakan tameng pertahanan bagi UMKM kuliner dan kios lokal di Kota Bandung agar tidak terus-menerus tergerus potongan komisi 20% dari aplikasi pihak ketiga. Ini bukan platform raksasa, melainkan alat mandiri milik Anda sendiri.</p>
+                <h2>Komitmen Jalur Jujur & Percontohan</h2>
+                <p>Kami memulai langkah ini dengan <strong>0 (Nol)</strong> antrean buatan. Semua daftar yang masuk adalah murni dari pemilik usaha yang serius. Program 15 VIP Percontohan adalah bukti bahwa kami serius membangun fondasi dari kepercayaan. Anda adalah 15 mitra paling utama yang akan menjadi studi kasus dan prioritas pengembangan sistem.</p>
+                <p>Niat utama HaloMitra adalah menyediakan tameng pertahanan bagi UMKM kuliner dan kios lokal di Kota Bandung agar tidak terus-menerus tergerus potongan komisi 20% dari aplikasi pihak ketiga. Ini bukan platform raksasa, melainkan alat mandiri milik anda sendiri</p>
             </div>
         </div>
     </section>
@@ -202,49 +180,27 @@
     <section id="demo" class="demo-section">
         <div class="demo-container">
             <div class="demo-text">
-                <h2>Uji Coba Sistem Secara Transparan</h2>
-                <p>Klik tombol <strong>+ Tambah</strong> pada menu simulasi di dalam mockup handphone untuk melihat bagaimana kalkulator otomatis kami menyusun rekap harga secara rapi dan instan tanpa membebani memori HP pelanggan.</p>
+                <h2>Simulasi Transparan</h2>
+                <p>Klik <strong>+ Tambah</strong> pada menu dalam mockup HP untuk melihat bagaimana kalkulator otomatis kami menyusun rekap pesanan rapi dan mengirimkannya langsung ke WhatsApp Anda.</p>
                 <ul class="features-list">
-                    <li>✨ <strong>Format WhatsApp Rapi:</strong> Pesanan terkirim otomatis terstruktur.</li>
-                    <li>✨ <strong>Ringan & Cepat:</strong> Pelanggan tidak perlu download aplikasi apapun.</li>
-                    <li>✨ <strong>Kunci Harga 6 Tahun:</strong> Komitmen biaya bulanan tetap hingga tahun 2032.</li>
+                    <li>✨ Format WhatsApp otomatis, siap proses.</li>
+                    <li>✨ Ringan, tanpa perlu download aplikasi.</li>
+                    <li>✨ Harga terkunci 6 tahun khusus 15 VIP.</li>
                 </ul>
             </div>
-            
             <div class="mockup-wrapper">
                 <div class="mockup-hp">
                     <div class="mockup-notch"></div>
                     <div class="katalog-mini">
-                        <h3 style="text-align: center; color: var(--primary); font-size: 1.1rem; margin-bottom: 10px;">Kios Demo Mandiri</h3>
+                        <h3 style="text-align:center;color:var(--primary);font-size:1.1rem;margin-bottom:10px;">Kios Demo</h3>
                         <div class="grid-produk-mini">
-                            <div class="kartu-produk-mini">
-                                <div>
-                                    <h4>Nasi Goreng Telur</h4>
-                                    <span class="harga-mini">Rp 15.000</span>
-                                </div>
-                                <button class="btn-tambah-demo" data-nama="Nasi Goreng Telur" data-harga="15000">+ Tambah</button>
-                            </div>
-                            <div class="kartu-produk-mini">
-                                <div>
-                                    <h4>Mie Tek-Tek Kuah</h4>
-                                    <span class="harga-mini">Rp 15.000</span>
-                                </div>
-                                <button class="btn-tambah-demo" data-nama="Mie Tek-Tek Kuah" data-harga="15000">+ Tambah</button>
-                            </div>
-                            <div class="kartu-produk-mini">
-                                <div>
-                                    <h4>Es Teh Manis</h4>
-                                    <span class="harga-mini">Rp 5.000</span>
-                                </div>
-                                <button class="btn-tambah-demo" data-nama="Es Teh Manis" data-harga="5000">+ Tambah</button>
-                            </div>
+                            <div class="kartu-produk-mini"><div><h4>Nasi Goreng Telur</h4><span class="harga-mini">Rp 15.000</span></div><button class="btn-tambah-demo" data-nama="Nasi Goreng Telur" data-harga="15000">+ Tambah</button></div>
+                            <div class="kartu-produk-mini"><div><h4>Mie Tek-Tek Kuah</h4><span class="harga-mini">Rp 15.000</span></div><button class="btn-tambah-demo" data-nama="Mie Tek-Tek Kuah" data-harga="15000">+ Tambah</button></div>
+                            <div class="kartu-produk-mini"><div><h4>Es Teh Manis</h4><span class="harga-mini">Rp 5.000</span></div><button class="btn-tambah-demo" data-nama="Es Teh Manis" data-harga="5000">+ Tambah</button></div>
                         </div>
                     </div>
                     <div class="keranjang-demo">
-                        <div>
-                            <span id="demo-count" style="display: block; font-size: 0.75rem; color: var(--text-gray);">0 Menu</span>
-                            <strong id="demo-price" style="color: var(--primary);">Rp 0</strong>
-                        </div>
+                        <div><span id="demo-count" style="display:block;font-size:0.75rem;color:var(--text-gray);">0 Menu</span><strong id="demo-price" style="color:var(--primary);">Rp 0</strong></div>
                         <button id="btn-demo-wa">Kirim ke WA</button>
                     </div>
                 </div>
@@ -252,89 +208,80 @@
         </div>
     </section>
 
-    <section class="distrik-section">
-        <div class="section-header">
-            <h2>Komitmen Lapangan 13 Wilayah</h2>
-            <p>Founder siap turun langsung melakukan asistensi, instalasi, dan optimasi menu di meja warung Anda di seluruh area berikut:</p>
-        </div>
-        <div class="grid-distrik">
-            <div class="card-distrik"><strong>1. Dago & Cisitu</strong><span class="status-ready">🟢 Jalur Blusukan Siap</span></div>
-            <div class="card-distrik"><strong>2. Dipatiukur & Tubagus</strong><span class="status-ready">🟢 Jalur Blusukan Siap</span></div>
-            <div class="card-distrik"><strong>3. Pasteur & Sukajadi</strong><span class="status-ready">🟢 Jalur Blusukan Siap</span></div>
-            <div class="card-distrik"><strong>4. Burangrang & Lengkong</strong><span class="status-ready">🟢 Jalur Blusukan Siap</span></div>
-            <div class="card-distrik"><strong>5. Buah Batu & Kliningan</strong><span class="status-ready">🟢 Jalur Blusukan Siap</span></div>
-            <div class="card-distrik"><strong>6. Setiabudi & Ledeng</strong><span class="status-ready">🟢 Jalur Blusukan Siap</span></div>
-            <div class="card-distrik"><strong>7. Antapani & Arcamanik</strong><span class="status-ready">🟢 Jalur Blusukan Siap</span></div>
-            <div class="card-distrik"><strong>8. Braga & Asia Afrika</strong><span class="status-ready">🟢 Jalur Blusukan Siap</span></div>
-            <div class="card-distrik"><strong>9. Cihampelas & Cicendo</strong><span class="status-ready">🟢 Jalur Blusukan Siap</span></div>
-            <div class="card-distrik"><strong>10. Kiaracondong & Binong</strong><span class="status-ready">🟢 Jalur Blusukan Siap</span></div>
-            <div class="card-distrik"><strong>11. Cibaduyut & Kopo</strong><span class="status-ready">🟢 Jalur Blusukan Siap</span></div>
-            <div class="card-distrik"><strong>12. Ujung Berung & Cibiru</strong><span class="status-ready">🟢 Jalur Blusukan Siap</span></div>
-            <div class="card-distrik"><strong>13. Pasir Kaliki & Andir</strong><span class="status-ready">🟢 Jalur Blusukan Siap</span></div>
-        </div>
-    </section>
-
-    <section id="harga" class="pricing-section">
-        <div class="section-header">
-            <h2>Skema Biaya Tanpa Variabel Tersembunyi</h2>
-            <p>Garansi penguncian harga bulanan selama 6 tahun berturut-turut untuk menjaga stabilitas pengeluaran digital usaha Anda.</p>
+    <section id="vip" class="vip-section">
+        <div class="vip-header">
+            <h2>🛡️ 15 VIP Percontohan</h2>
+            <span class="badge-limit">Pendaftaran Ditutup Setelah Kuota Penuh</span>
+            <div class="progress-container"><div id="progress-fill" class="progress-fill" style="width: 0%;"></div></div>
+            <p style="margin-top:10px;color:var(--text-gray);"><span id="slot-terisi">0</span> dari 15 slot sudah terisi. Garansi 6 Tahun hanya berlaku untuk 15 VIP ini.</p>
         </div>
         
-        <div class="pricing-container">
+        <div class="pricing-vip">
+            <!-- Paket Gerilya -->
             <div class="pricing-card">
                 <div class="tier-name">Paket Gerilya</div>
                 <div class="price-box">
                     <span class="main-price"><sup>Rp</sup> 15.000<span>/bln</span></span>
-                    <span class="setup-cost">Setup awal: <del>Rp 399.000</del> <strong>Rp 75.000</strong></span>
+                    <span class="setup-cost">Setup: <del>Rp 399.000</del> <strong>Rp 75.000</strong></span>
                 </div>
                 <ul class="pricing-features">
-                    <li>✅ Katalog Digital Mandiri (Maks 15 Menu)</li>
-                    <li>✅ Live Price Calculator</li>
-                    <li>✅ Direct WhatsApp Integration</li>
-                    <li>✅ Garansi Biaya Terkunci 6 Tahun</li>
+                    <li>✅ Katalog Digital (15 Menu)</li>
+                    <li>✅ Live Calculator</li>
+                    <li>✅ Direct WhatsApp</li>
+                    <li>✅ Garansi 6 Tahun (VIP)</li>
                 </ul>
                 <button class="btn-order btn-trigger-modal" data-paket="Gerilya">Pilih Gerilya</button>
+                <div class="slot-remaining">Kuota Gabungan: 13 slot (dengan Ekspansi Pro)</div>
             </div>
 
+            <!-- Paket Ekspansi Pro -->
             <div class="pricing-card featured">
-                <div class="badge-featured">REKOMENDASI UTAMA</div>
+                <div class="badge-featured">REKOMENDASI</div>
                 <div class="tier-name">Ekspansi Pro</div>
                 <div class="price-box">
                     <span class="main-price"><sup>Rp</sup> 50.000<span>/bln</span></span>
-                    <span class="setup-cost">Setup awal: <del>Rp 599.000</del> <strong>Rp 335.000</strong></span>
+                    <span class="setup-cost">Setup: <del>Rp 599.000</del> <strong>Rp 335.000</strong></span>
                 </div>
                 <ul class="pricing-features">
-                    <li>✅ Katalog Digital Tanpa Batas Menu</li>
-                    <li>✅ Optimasi Struktur Copywriting Menu</li>
-                    <li>✅ Server Prioritas Bebas Hambatan</li>
-                    <li>✅ Asistensi Tatap Muka Langsung</li>
-                    <li>✅ Garansi Biaya Terkunci 6 Tahun</li>
+                    <li>✅ Katalog Unlimited Menu</li>
+                    <li>✅ Optimasi Copywriting</li>
+                    <li>✅ Server Prioritas</li>
+                    <li>✅ Tatap Muka Langsung</li>
+                    <li>✅ Garansi 6 Tahun (VIP)</li>
                 </ul>
                 <button class="btn-order btn-trigger-modal" data-paket="Ekspansi Pro">Pilih Ekspansi Pro</button>
+                <div class="slot-remaining">Kuota Gabungan: 13 slot (dengan Gerilya)</div>
             </div>
 
+            <!-- Paket Monarki -->
             <div class="pricing-card">
-                <div class="tier-name">Paket Panglima</div>
+                <div class="tier-name">Paket Monarki</div>
                 <div class="price-box">
-                    <span class="main-price"><sup>Rp</sup> 450.000<span>/bln</span></span>
-                    <span class="setup-cost">Setup awal: <del>Rp 2.990.000</del> <strong>Rp 1.899.000</strong></span>
+                    <span class="main-price"><sup>Rp</sup> 150.000<span>/bln</span></span>
+                    <span class="setup-cost">Setup: <del>Rp 2.990.000</del> <strong>Rp 999.000</strong></span>
                 </div>
                 <ul class="pricing-features">
-                    <li>✅ Seluruh Fitur Paket Pro</li>
-                    <li>✅ Integrasi Absensi GPS Karyawan</li>
-                    <li>✅ Sistem Rekap Manajemen Pendapatan</li>
-                    <li>✅ Prioritas Pendampingan Skala Utama</li>
-                    <li>✅ Garansi Biaya Terkunci 6 Tahun</li>
+                    <li>✅ Semua Fitur Pro</li>
+                    <li>✅ Absensi GPS Karyawan</li>
+                    <li>✅ Rekap Manajemen</li>
+                    <li>✅ Prioritas Pendampingan</li>
+                    <li>✅ Garansi 6 Tahun (VIP)</li>
                 </ul>
-                <button class="btn-order btn-trigger-modal" data-paket="Panglima">Hubungi Hub</button>
+                <button class="btn-order btn-trigger-modal" data-paket="Monarki">Hubungi Hub</button>
+                <div class="slot-remaining">Ketat: Hanya 2 Slot</div>
             </div>
         </div>
     </section>
 
+    <section class="coming-soon-section">
+        <h3>🚀 EKSPANSI 390 SLOT — COMING SOON</h3>
+        <p style="color:var(--text-gray); font-size:0.9rem;">Setelah 15 VIP Percontohan sukses, kita buka 390 slot untuk 13 wilayah Bandung.</p>
+    </section>
+
     <div id="order-modal" class="modal-overlay">
         <div class="modal-box">
-            <h3>Konsultasi & Penyelarasan Usaha</h3>
-            <p id="modal-text">Hubungkan sistem katalog mandiri Anda langsung dengan tim teknis kami.</p>
+            <h3>Konsultasi VIP</h3>
+            <p id="modal-text">Hubungkan sistem katalog mandiri Anda langsung dengan Founder HaloMitra.</p>
             <div class="modal-actions">
                 <button id="btn-modal-close" class="btn-modal btn-modal-back">Kembali</button>
                 <button id="btn-modal-confirm" class="btn-modal btn-modal-go">Buka WhatsApp</button>
@@ -343,66 +290,72 @@
     </div>
 
     <footer class="footer-clean">
-        <p>© 2026 HaloMitra Digital Infrastructure. Berdiri Tegap Bersama UMKM.</p>
+        <p>© 2026 HaloMitra Digital Infrastructure. Berdiri Tegap Bersama 15 UMKM Pertama.</p>
     </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const WHATSAPP_NUMBER = "6282312559796";
+            // Simulasi slot terisi (bisa diganti dinamis nanti)
+            let slotTerisi = 0; // Mulai dari 0, kamu bisa update manual dari sini jika sudah ada DP
             
-            // Logika Modal Order
+            // Update tampilan slot
+            const progressFill = document.getElementById('progress-fill');
+            const slotText = document.getElementById('slot-terisi');
+            function updateSlotDisplay() {
+                let percent = (slotTerisi / 15) * 100;
+                progressFill.style.width = percent + "%";
+                slotText.innerText = slotTerisi;
+            }
+            updateSlotDisplay();
+
+            // Logika Modal
             const modal = document.getElementById('order-modal');
             const modalText = document.getElementById('modal-text');
             const btnClose = document.getElementById('btn-modal-close');
             const btnConfirm = document.getElementById('btn-modal-confirm');
             let targetPaket = "";
 
-            document.querySelectorAll('.btn-trigger-modal').forEach(function(button) {
-                button.addEventListener('click', function() {
-                    targetPaket = button.getAttribute('data-paket');
-                    modalText.innerText = "Apakah Anda ingin melanjutkan koordinasi pendaftaran " + targetPaket + " untuk warung/kios Anda bersama Founder HaloMitra?";
+            document.querySelectorAll('.btn-trigger-modal').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    targetPaket = this.getAttribute('data-paket');
+                    modalText.innerText = "Apakah Anda ingin melanjutkan koordinasi pendaftaran Paket " + targetPaket + " sebagai bagian dari 15 VIP Percontohan bersama Founder HaloMitra?";
                     modal.classList.add('active');
                 });
             });
 
-            btnClose.addEventListener('click', function() {
-                modal.classList.remove('active');
-            });
-            
+            btnClose.addEventListener('click', () => modal.classList.remove('active'));
             btnConfirm.addEventListener('click', function() {
-                const message = "Halo Founder HaloMitra,\n\nSaya ingin berkonsultasi mengenai pengaktifan *" + targetPaket + "* dengan skema jujur tanpa komisi untuk usaha saya. Mohon arahan jadwal tatap mukanya.";
+                const message = "Halo Founder HaloMitra,\n\nSaya tertarik menjadi bagian dari 15 VIP Percontohan, Paket *" + targetPaket + "*. Mohon arahan jadwal tatap mukanya.";
                 window.open("https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message), '_blank');
                 modal.classList.remove('active');
+                // Simulasi: setelah konsultasi, slot bertambah (opsional)
+                slotTerisi = Math.min(slotTerisi + 1, 15);
+                updateSlotDisplay();
             });
 
-            // Logika Keranjang Demo
+            // Keranjang Demo
             let cart = [];
             const countEl = document.getElementById('demo-count');
             const priceEl = document.getElementById('demo-price');
 
-            document.querySelectorAll('.btn-tambah-demo').forEach(function(btn) {
+            document.querySelectorAll('.btn-tambah-demo').forEach(btn => {
                 btn.addEventListener('click', function() {
-                    const nama = btn.getAttribute('data-nama');
-                    const harga = parseInt(btn.getAttribute('data-harga'));
+                    const nama = this.getAttribute('data-nama');
+                    const harga = parseInt(this.getAttribute('data-harga'));
+                    cart.push({ nama, harga });
                     
-                    cart.push({ nama: nama, harga: harga });
-                    
-                    const oldText = btn.innerText;
-                    btn.innerText = "✓ Masuk";
-                    btn.style.background = "#dcfce7";
-                    btn.style.color = "#16a34a";
-                    
-                    setTimeout(function() {
-                        btn.innerText = oldText;
-                        btn.style.background = "#eff6ff";
-                        btn.style.color = "var(--accent)";
+                    const oldText = this.innerText;
+                    this.innerText = "✓ Masuk";
+                    this.style.background = "#dcfce7";
+                    this.style.color = "#16a34a";
+                    setTimeout(() => {
+                        this.innerText = oldText;
+                        this.style.background = "#eff6ff";
+                        this.style.color = "var(--accent)";
                     }, 600);
 
-                    let totalHarga = 0;
-                    for (let i = 0; i < cart.length; i++) {
-                        totalHarga += cart[i].harga;
-                    }
-
+                    const totalHarga = cart.reduce((sum, item) => sum + item.harga, 0);
                     countEl.innerText = cart.length + " Menu";
                     priceEl.innerText = "Rp " + totalHarga.toLocaleString('id-ID');
                 });
@@ -413,21 +366,12 @@
                     alert("Silakan klik '+ Tambah' pada menu terlebih dahulu untuk mencoba simulasi.");
                     return;
                 }
-                
                 let textOrder = "Halo Kios (Simulasi Demo Web),\nBerikut rincian pesanan saya:\n\n";
-                let total = 0;
-                
-                for (let i = 0; i < cart.length; i++) {
-                    textOrder += "- " + cart[i].nama + " (Rp " + cart[i].harga.toLocaleString('id-ID') + ")\n";
-                    total += cart[i].harga;
-                }
-                
+                let total = cart.reduce((sum, item) => sum + item.harga, 0);
+                cart.forEach(item => textOrder += "- " + item.nama + " (Rp " + item.harga.toLocaleString('id-ID') + ")\n");
                 textOrder += "\n*Total Tagihan: Rp " + total.toLocaleString('id-ID') + "*";
                 textOrder += "\n\n_Catatan: Ini adalah simulasi pengiriman pesanan dari demo HaloMitra._";
-
                 window.open("https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(textOrder), '_blank');
-                
-                // Reset keranjang
                 cart = [];
                 countEl.innerText = "0 Menu";
                 priceEl.innerText = "Rp 0";
