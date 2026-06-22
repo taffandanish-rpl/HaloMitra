@@ -5,13 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=2.0">
     <meta name="description" content="HaloMitra - Program VIP Percontohan 15 UMKM Bandung. 0% Komisi. Garansi Harga Terkunci 6 Tahun.">
     <title>HaloMitra | 15 VIP Percontohan UMKM Bandung</title>
-    
+
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
+
     <style>
+        /* ============================================================
+               ROOT & RESET
+               ============================================================ */
         :root {
             --primary: #0f172a;
             --primary-dark: #020617;
@@ -28,7 +31,13 @@
             --radius-premium: 16px;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             color: var(--text-dark);
@@ -37,43 +46,135 @@
             overflow-x: hidden;
         }
 
-        /* ===== NAVBAR MEWAH ===== */
+        /* ===== NAVBAR ===== */
         .navbar-premium {
-            position: fixed; top: 0; width: 100%; z-index: 1000;
-            background: rgba(255,255,255,0.85); backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(226,232,240,0.8); padding: 15px 5%;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+            padding: 15px 5%;
         }
-        .nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; }
-        .logo-area { display: flex; align-items: center; gap: 12px; }
-        .brand-text { font-size: 1.4rem; font-weight: 800; color: var(--primary); letter-spacing: -0.8px; }
-        .brand-text span { color: var(--accent); }
-        .nav-links { display: flex; gap: 30px; list-style: none; align-items: center; }
-        .nav-links a { text-decoration: none; color: var(--text-gray); font-weight: 600; font-size: 0.95rem; transition: 0.2s; }
-        .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .brand-text {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: -0.8px;
+        }
+        .brand-text span {
+            color: var(--accent);
+        }
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            align-items: center;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-gray);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: 0.2s;
+        }
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--accent);
+        }
 
-        /* ===== HERO DENGAN GLOW ===== */
+        /* ===== HERO ===== */
         .hero-section {
-            padding: 180px 5% 80px; text-align: center;
+            padding: 180px 5% 80px;
+            text-align: center;
             background: radial-gradient(circle at 30% 10%, #1e293b 0%, #0f172a 60%, #020617 100%);
-            color: #fff; position: relative; overflow: hidden;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
         }
         .hero-section::before {
-            content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
-            background: radial-gradient(circle at 70% 30%, rgba(37,99,235,0.08) 0%, transparent 60%);
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 70% 30%, rgba(37, 99, 235, 0.08) 0%, transparent 60%);
             animation: rotateGlow 30s linear infinite;
         }
         @keyframes rotateGlow {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
         }
-        .hero-content { position: relative; max-width: 850px; margin: 0 auto; z-index: 2; }
-        .badge-mission { display: inline-block; background: rgba(37,99,235,0.15); color: #93c5fd; border: 1px solid rgba(37,99,235,0.3); padding: 8px 18px; border-radius: 50px; font-size: 0.8rem; font-weight: 700; margin-bottom: 25px; backdrop-filter: blur(10px); }
-        .hero-title { font-size: 3.2rem; font-weight: 800; line-height: 1.2; margin-bottom: 25px; letter-spacing: -1.5px; }
-        .highlight-text { background: linear-gradient(to right, #93c5fd, #2563eb, #7c3aed); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-size: 200% auto; animation: shimmer 4s ease-in-out infinite; }
-        @keyframes shimmer { 0% { background-position: 0% center; } 50% { background-position: 100% center; } 100% { background-position: 0% center; } }
-        .hero-subtitle { font-size: 1.15rem; color: #94a3b8; margin-bottom: 20px; max-width: 650px; margin-left: auto; margin-right: auto; }
+        .hero-content {
+            position: relative;
+            max-width: 850px;
+            margin: 0 auto;
+            z-index: 2;
+        }
+        .badge-mission {
+            display: inline-block;
+            background: rgba(37, 99, 235, 0.15);
+            color: #93c5fd;
+            border: 1px solid rgba(37, 99, 235, 0.3);
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            backdrop-filter: blur(10px);
+        }
+        .hero-title {
+            font-size: 3.2rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 25px;
+            letter-spacing: -1.5px;
+        }
+        .highlight-text {
+            background: linear-gradient(to right, #93c5fd, #2563eb, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: shimmer 4s ease-in-out infinite;
+        }
+        @keyframes shimmer {
+            0% {
+                background-position: 0% center;
+            }
+            50% {
+                background-position: 100% center;
+            }
+            100% {
+                background-position: 0% center;
+            }
+        }
+        .hero-subtitle {
+            font-size: 1.15rem;
+            color: #94a3b8;
+            margin-bottom: 20px;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-        /* ===== RIBBON TANGGAL MEWAH (BARU) ===== */
         .date-ribbon {
             display: inline-flex;
             align-items: center;
@@ -90,162 +191,706 @@
             letter-spacing: 0.5px;
             box-shadow: 0 0 30px rgba(255, 215, 0, 0.05);
         }
-        .date-ribbon strong { color: #fbbf24; font-weight: 800; }
-        .date-ribbon span { color: rgba(255,255,255,0.5); margin: 0 5px; }
-
-        .hero-buttons { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
-        .btn-primary, .btn-secondary { padding: 14px 32px; border-radius: 10px; font-weight: 700; text-decoration: none; font-size: 1rem; transition: 0.3s; cursor: pointer; border: none; display: inline-block; }
-        .btn-primary { background: var(--accent); color: white; box-shadow: 0 4px 20px rgba(37,99,235,0.4); }
-        .btn-primary:hover { background: var(--accent-light); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(37,99,235,0.5); }
-        .btn-secondary { background: rgba(255,255,255,0.05); color: white; border: 1px solid rgba(255,255,255,0.15); backdrop-filter: blur(10px); }
-        .btn-secondary:hover { background: rgba(255,255,255,0.12); transform: translateY(-2px); }
-
-        .manifesto-section { padding: 70px 5%; background: var(--bg-white); border-bottom: 1px solid var(--border); }
-        .container-box { max-width: 1000px; margin: 0 auto; }
-        .manifesto-card { background: linear-gradient(135deg, var(--bg-light), #eef2ff); border-left: 4px solid var(--accent); padding: 40px; border-radius: 0 var(--radius-premium) var(--radius-premium) 0; box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
-        .manifesto-card h2 { font-size: 1.8rem; color: var(--primary); margin-bottom: 15px; font-weight: 800; }
-        .manifesto-card p { color: var(--text-dark); font-size: 1.05rem; margin-bottom: 15px; text-align: justify; }
-
-        .demo-section { padding: 80px 5%; background: var(--bg-light); border-bottom: 1px solid var(--border); }
-        .demo-container { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; gap: 50px; flex-wrap: wrap; justify-content: center; }
-        .demo-text { flex: 1; min-width: 280px; max-width: 500px; }
-        .demo-text h2 { font-size: 2rem; color: var(--primary); margin-bottom: 20px; font-weight: 800; }
-        .features-list { list-style: none; margin-top: 20px; }
-        .features-list li { margin-bottom: 12px; font-size: 1rem; color: var(--text-dark); display: flex; align-items: center; gap: 10px; }
-        .mockup-wrapper { flex: 1; display: flex; justify-content: center; min-width: 280px; }
-        .mockup-hp { width: 310px; height: 560px; background: white; border-radius: 40px; border: 12px solid #0f172a; position: relative; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.15); }
-        .mockup-notch { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 110px; height: 25px; background: #0f172a; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; z-index: 12; }
-        .katalog-mini { padding: 40px 16px 85px; height: 100%; overflow-y: auto; }
-        .grid-produk-mini { display: flex; flex-direction: column; gap: 12px; margin-top: 15px; }
-        .kartu-produk-mini { border: 1px solid var(--border); padding: 12px 14px; border-radius: 12px; display: flex; justify-content: space-between; align-items: center; background: #fff; }
-        .kartu-produk-mini h4 { font-size: 0.9rem; color: var(--primary); margin-bottom: 4px; }
-        .harga-mini { color: var(--accent); font-weight: 700; font-size: 0.85rem; }
-        .btn-tambah-demo { background: #eff6ff; color: var(--accent); border: none; padding: 6px 12px; border-radius: 8px; font-weight: 700; font-size: 0.8rem; cursor: pointer; transition: 0.2s; }
-        .keranjang-demo { position: absolute; bottom: 0; left: 0; width: 100%; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border); z-index: 10; }
-        #btn-demo-wa { background: var(--success); color: white; border: none; padding: 10px 18px; border-radius: 30px; font-weight: 700; cursor: pointer; font-size: 0.85rem; transition: 0.3s; }
-        #btn-demo-wa:hover { transform: scale(1.03); box-shadow: 0 4px 15px rgba(22,163,74,0.4); }
-
-        .vip-section { padding: 80px 5%; background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 50%, #e0e7ff 100%); border-bottom: 1px solid var(--border); }
-        .vip-header { text-align: center; margin-bottom: 40px; }
-        .vip-header h2 { font-size: 2.2rem; color: var(--primary); font-weight: 800; margin-bottom: 10px; }
-        .vip-header .badge-limit { background: linear-gradient(135deg, var(--gold), #f59e0b); color: #0f172a; font-weight: 800; padding: 6px 20px; border-radius: 30px; font-size: 0.9rem; display: inline-block; box-shadow: 0 4px 15px rgba(245,158,11,0.3); }
-        .progress-container { max-width: 400px; margin: 15px auto 0; background: #e2e8f0; height: 10px; border-radius: 10px; overflow: hidden; }
-        .progress-fill { width: 0%; height: 100%; background: linear-gradient(90deg, var(--accent), var(--gold)); border-radius: 10px; transition: width 0.8s ease; }
-
-        .pricing-vip { display: flex; flex-wrap: wrap; gap: 25px; max-width: 1200px; margin: 30px auto 0; justify-content: center; }
-        .pricing-card {
-            background: rgba(255,255,255,0.8); backdrop-filter: blur(20px);
-            padding: 35px 25px; border-radius: 24px; border: 1px solid rgba(255,255,255,0.3);
-            flex: 1; min-width: 240px; max-width: 280px; display: flex; flex-direction: column;
-            position: relative; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        .date-ribbon strong {
+            color: #fbbf24;
+            font-weight: 800;
         }
-        .pricing-card:hover { transform: translateY(-10px) scale(1.02); box-shadow: 0 30px 60px rgba(0,0,0,0.12); }
-        .pricing-card.featured { border: 2px solid var(--accent); box-shadow: 0 10px 40px rgba(37,99,235,0.15); }
-        .badge-featured { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, var(--accent), #7c3aed); color: white; padding: 4px 20px; border-radius: 30px; font-size: 0.7rem; font-weight: 700; white-space: nowrap; box-shadow: 0 4px 15px rgba(37,99,235,0.3); }
-        .tier-name { font-size: 1.2rem; font-weight: 800; color: var(--primary); margin-bottom: 10px; }
-        .price-box { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--border); }
-        .main-price { font-size: 2.1rem; font-weight: 800; color: var(--primary); }
-        .main-price span { font-size: 0.85rem; color: var(--text-gray); }
-        .setup-cost { display: block; font-size: 0.85rem; color: var(--text-gray); margin-top: 5px; }
-        .setup-cost del { color: #94a3b8; margin-right: 6px; }
-        .pricing-features { list-style: none; margin-bottom: 15px; flex-grow: 1; font-size: 0.9rem; }
-        .pricing-features li { margin-bottom: 10px; color: var(--text-dark); display: flex; align-items: flex-start; gap: 6px; }
-        .pricing-features li .cross { color: #ccc; }
-        
+        .date-ribbon span {
+            color: rgba(255, 255, 255, 0.5);
+            margin: 0 5px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn-primary,
+        .btn-secondary {
+            padding: 14px 32px;
+            border-radius: 10px;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: 0.3s;
+            cursor: pointer;
+            border: none;
+            display: inline-block;
+        }
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+            box-shadow: 0 4px 20px rgba(37, 99, 235, 0.4);
+        }
+        .btn-primary:hover {
+            background: var(--accent-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(37, 99, 235, 0.5);
+        }
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+        }
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.12);
+            transform: translateY(-2px);
+        }
+
+        /* ===== MANIFESTO ===== */
+        .manifesto-section {
+            padding: 70px 5%;
+            background: var(--bg-white);
+            border-bottom: 1px solid var(--border);
+        }
+        .container-box {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .manifesto-card {
+            background: linear-gradient(135deg, var(--bg-light), #eef2ff);
+            border-left: 4px solid var(--accent);
+            padding: 40px;
+            border-radius: 0 var(--radius-premium) var(--radius-premium) 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+        }
+        .manifesto-card h2 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+        .manifesto-card p {
+            color: var(--text-dark);
+            font-size: 1.05rem;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        /* ===== DEMO ===== */
+        .demo-section {
+            padding: 80px 5%;
+            background: var(--bg-light);
+            border-bottom: 1px solid var(--border);
+        }
+        .demo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .demo-text {
+            flex: 1;
+            min-width: 280px;
+            max-width: 500px;
+        }
+        .demo-text h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+        .features-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+        .features-list li {
+            margin-bottom: 12px;
+            font-size: 1rem;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .mockup-wrapper {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            min-width: 280px;
+        }
+        .mockup-hp {
+            width: 310px;
+            height: 560px;
+            background: white;
+            border-radius: 40px;
+            border: 12px solid #0f172a;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+        .mockup-notch {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 110px;
+            height: 25px;
+            background: #0f172a;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            z-index: 12;
+        }
+        .katalog-mini {
+            padding: 40px 16px 85px;
+            height: 100%;
+            overflow-y: auto;
+        }
+        .grid-produk-mini {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 15px;
+        }
+        .kartu-produk-mini {
+            border: 1px solid var(--border);
+            padding: 12px 14px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #fff;
+        }
+        .kartu-produk-mini h4 {
+            font-size: 0.9rem;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+        .harga-mini {
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 0.85rem;
+        }
+        .btn-tambah-demo {
+            background: #eff6ff;
+            color: var(--accent);
+            border: none;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .keranjang-demo {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid var(--border);
+            z-index: 10;
+        }
+        #btn-demo-wa {
+            background: var(--success);
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 30px;
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: 0.3s;
+        }
+        #btn-demo-wa:hover {
+            transform: scale(1.03);
+            box-shadow: 0 4px 15px rgba(22, 163, 74, 0.4);
+        }
+
+        /* ===== VIP SECTION ===== */
+        .vip-section {
+            padding: 80px 5%;
+            background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 50%, #e0e7ff 100%);
+            border-bottom: 1px solid var(--border);
+        }
+        .vip-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .vip-header h2 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+        .vip-header .badge-limit {
+            background: linear-gradient(135deg, var(--gold), #f59e0b);
+            color: #0f172a;
+            font-weight: 800;
+            padding: 6px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+        }
+        .progress-container {
+            max-width: 400px;
+            margin: 15px auto 0;
+            background: #e2e8f0;
+            height: 10px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent), var(--gold));
+            border-radius: 10px;
+            transition: width 0.8s ease;
+        }
+
+        .pricing-vip {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            max-width: 1200px;
+            margin: 30px auto 0;
+            justify-content: center;
+        }
+        .pricing-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            padding: 35px 25px;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            flex: 1;
+            min-width: 240px;
+            max-width: 280px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            cursor: pointer;
+        }
+        .pricing-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+        }
+        .pricing-card.featured {
+            border: 2px solid var(--accent);
+            box-shadow: 0 10px 40px rgba(37, 99, 235, 0.15);
+        }
+        .pricing-card.selected-card {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.2), 0 10px 40px rgba(37, 99, 235, 0.1);
+        }
+        .badge-featured {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--accent), #7c3aed);
+            color: white;
+            padding: 4px 20px;
+            border-radius: 30px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            white-space: nowrap;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+        }
+        .tier-name {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        .price-box {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+        }
+        .main-price {
+            font-size: 2.1rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+        .main-price span {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+        }
+        .setup-cost {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--text-gray);
+            margin-top: 5px;
+        }
+        .setup-cost del {
+            color: #94a3b8;
+            margin-right: 6px;
+        }
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 15px;
+            flex-grow: 1;
+            font-size: 0.9rem;
+        }
+        .pricing-features li {
+            margin-bottom: 10px;
+            color: var(--text-dark);
+            display: flex;
+            align-items: flex-start;
+            gap: 6px;
+        }
+        .pricing-features li .cross {
+            color: #ccc;
+        }
+
         .addon-box {
-            padding: 10px 14px; 
-            background: #f1f5f9; 
-            border-radius: 12px; 
-            margin: 8px 0 15px 0; 
-            font-size: 0.85rem; 
-            text-align: center; 
+            padding: 10px 14px;
+            background: #f1f5f9;
+            border-radius: 12px;
+            margin: 8px 0 15px 0;
+            font-size: 0.85rem;
+            text-align: center;
             border: 2px dashed #cbd5e1;
             color: var(--text-dark);
             transition: all 0.3s ease;
             cursor: pointer;
             user-select: none;
         }
-        .addon-box:hover { border-color: var(--accent); background: #eef2ff; }
+        .addon-box:hover {
+            border-color: var(--accent);
+            background: #eef2ff;
+        }
         .addon-box.active {
             border-color: var(--success);
             background: #dcfce7;
             border-style: solid;
         }
-        .addon-box del { color: #94a3b8; margin-right: 4px; }
-        .addon-box strong { font-weight: 700; }
-        .addon-box .toggle-indicator { font-size: 0.7rem; margin-left: 8px; color: var(--text-gray); }
-        .addon-box.active .toggle-indicator { color: var(--success); }
+        .addon-box del {
+            color: #94a3b8;
+            margin-right: 4px;
+        }
+        .addon-box strong {
+            font-weight: 700;
+        }
+        .addon-box .toggle-indicator {
+            font-size: 0.7rem;
+            margin-left: 8px;
+            color: var(--text-gray);
+        }
+        .addon-box.active .toggle-indicator {
+            color: var(--success);
+        }
 
-        .btn-order { width: 100%; padding: 14px; border-radius: 12px; border: none; font-weight: 700; font-size: 0.95rem; cursor: pointer; background: #f1f5f9; color: var(--primary); transition: 0.3s; }
-        .btn-order:hover { transform: scale(1.02); opacity: 0.9; }
-        .pricing-card.featured .btn-order { background: linear-gradient(135deg, var(--accent), #7c3aed); color: white; box-shadow: 0 4px 15px rgba(37,99,235,0.3); }
-        .slot-remaining { font-size: 0.7rem; color: var(--accent); font-weight: 700; margin-top: 8px; text-align: center; }
+        .btn-order {
+            width: 100%;
+            padding: 14px;
+            border-radius: 12px;
+            border: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            background: #f1f5f9;
+            color: var(--primary);
+            transition: 0.3s;
+        }
+        .btn-order:hover {
+            transform: scale(1.02);
+            opacity: 0.9;
+        }
+        .pricing-card.featured .btn-order {
+            background: linear-gradient(135deg, var(--accent), #7c3aed);
+            color: white;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+        }
+        .slot-remaining {
+            font-size: 0.7rem;
+            color: var(--accent);
+            font-weight: 700;
+            margin-top: 8px;
+            text-align: center;
+        }
 
-        .monarki-variant-wrapper { display: flex; flex-wrap: wrap; gap: 25px; justify-content: center; width: 100%; margin-top: 20px; }
+        .monarki-variant-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: center;
+            width: 100%;
+            margin-top: 20px;
+        }
         .variant-card {
-            background: rgba(255,255,255,0.8); backdrop-filter: blur(20px);
-            padding: 25px 20px; border-radius: 24px; border: 2px solid rgba(226,232,240,0.8);
-            flex: 1; min-width: 240px; max-width: 280px;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            padding: 25px 20px;
+            border-radius: 24px;
+            border: 2px solid rgba(226, 232, 240, 0.8);
+            flex: 1;
+            min-width: 240px;
+            max-width: 280px;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            cursor: pointer; position: relative;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            cursor: pointer;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
         }
-        .variant-card:hover { transform: translateY(-8px) scale(1.01); border-color: #94a3b8; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
-        .variant-card.selected-premier { border-color: #e67e22; background: #fffaf5; box-shadow: 0 0 0 4px rgba(230, 126, 34, 0.2), 0 20px 40px rgba(230,126,34,0.1); }
-        .variant-card.selected-pro { border-color: #8e44ad; background: #f8f0ff; box-shadow: 0 0 0 4px rgba(142, 68, 173, 0.2), 0 20px 40px rgba(142,68,173,0.1); }
-        .variant-card .badge-variant { font-size: 10px; font-weight: 700; padding: 4px 12px; border-radius: 30px; display: inline-block; margin-bottom: 12px; letter-spacing: 0.5px; }
-        .badge-premier { background: #e67e22; color: white; }
-        .badge-pro { background: #8e44ad; color: white; }
-        .variant-card h3 { font-size: 1.4rem; margin-bottom: 8px; }
-        .variant-card .price-main { font-size: 1.8rem; }
-        .variant-card .price-sub { font-size: 0.8rem; }
-        .btn-premier-order { background: linear-gradient(135deg, #e67e22, #d35400); color: white; border: none; padding: 12px; border-radius: 12px; font-weight: 700; width: 100%; cursor: pointer; margin-top: 15px; transition: 0.3s; }
-        .btn-premier-order:hover { transform: scale(1.02); box-shadow: 0 4px 15px rgba(230,126,34,0.4); }
-        .btn-pro-order { background: linear-gradient(135deg, #8e44ad, #6c3483); color: white; border: none; padding: 12px; border-radius: 12px; font-weight: 700; width: 100%; cursor: pointer; margin-top: 15px; transition: 0.3s; }
-        .btn-pro-order:hover { transform: scale(1.02); box-shadow: 0 4px 15px rgba(142,68,173,0.4); }
+        .variant-card:hover {
+            transform: translateY(-8px) scale(1.01);
+            border-color: #94a3b8;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        .variant-card.selected-premier {
+            border-color: #e67e22;
+            background: #fffaf5;
+            box-shadow: 0 0 0 4px rgba(230, 126, 34, 0.2), 0 20px 40px rgba(230, 126, 34, 0.1);
+        }
+        .variant-card.selected-pro {
+            border-color: #8e44ad;
+            background: #f8f0ff;
+            box-shadow: 0 0 0 4px rgba(142, 68, 173, 0.2), 0 20px 40px rgba(142, 68, 173, 0.1);
+        }
+        .variant-card .badge-variant {
+            font-size: 10px;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 30px;
+            display: inline-block;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+        .badge-premier {
+            background: #e67e22;
+            color: white;
+        }
+        .badge-pro {
+            background: #8e44ad;
+            color: white;
+        }
+        .variant-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+        }
+        .variant-card .price-main {
+            font-size: 1.8rem;
+        }
+        .variant-card .price-sub {
+            font-size: 0.8rem;
+        }
+        .btn-premier-order {
+            background: linear-gradient(135deg, #e67e22, #d35400);
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 12px;
+            font-weight: 700;
+            width: 100%;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: 0.3s;
+        }
+        .btn-premier-order:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 15px rgba(230, 126, 34, 0.4);
+        }
+        .btn-pro-order {
+            background: linear-gradient(135deg, #8e44ad, #6c3483);
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 12px;
+            font-weight: 700;
+            width: 100%;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: 0.3s;
+        }
+        .btn-pro-order:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 15px rgba(142, 68, 173, 0.4);
+        }
+
         .toast-notification {
-            position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%);
-            background: #0f172a; color: white; padding: 16px 28px; border-radius: 60px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.3); z-index: 9999;
-            font-weight: 600; font-size: 0.95rem;
-            opacity: 0; transition: opacity 0.4s ease, transform 0.3s ease;
-            pointer-events: none; text-align: center; max-width: 90%;
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #0f172a;
+            color: white;
+            padding: 16px 28px;
+            border-radius: 60px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            z-index: 9999;
+            font-weight: 600;
+            font-size: 0.95rem;
+            opacity: 0;
+            transition: opacity 0.4s ease, transform 0.3s ease;
+            pointer-events: none;
+            text-align: center;
+            max-width: 90%;
         }
-        .toast-notification.show { opacity: 1; pointer-events: auto; }
+        .toast-notification.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
 
-        .coming-soon-section { padding: 40px 5%; background: var(--bg-white); text-align: center; border-bottom: 1px solid var(--border); }
-        .coming-soon-section h3 { color: var(--text-gray); font-weight: 600; font-size: 1rem; letter-spacing: 1px; }
+        .coming-soon-section {
+            padding: 40px 5%;
+            background: var(--bg-white);
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+        .coming-soon-section h3 {
+            color: var(--text-gray);
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
 
-        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15,23,42,0.6); backdrop-filter: blur(12px); z-index: 9999; display: flex; justify-content: center; align-items: center; opacity: 0; pointer-events: none; transition: 0.3s; }
-        .modal-overlay.active { opacity: 1; pointer-events: auto; }
-        .modal-box { background: rgba(255,255,255,0.95); backdrop-filter: blur(20px); padding: 35px; border-radius: 24px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 30px 60px rgba(0,0,0,0.2); }
-        .modal-box h3 { font-size: 1.3rem; color: var(--primary); margin-bottom: 10px; font-weight: 800; }
-        .modal-box p { font-size: 0.95rem; color: var(--text-gray); margin-bottom: 25px; }
-        .modal-actions { display: flex; gap: 10px; }
-        .btn-modal { flex: 1; padding: 12px; border-radius: 12px; font-weight: 700; border: none; cursor: pointer; transition: 0.3s; }
-        .btn-modal-back { background: #f1f5f9; color: var(--text-gray); }
-        .btn-modal-back:hover { background: #e2e8f0; }
-        .btn-modal-go { background: linear-gradient(135deg, var(--accent), #7c3aed); color: white; }
-        .btn-modal-go:hover { transform: scale(1.03); box-shadow: 0 4px 15px rgba(37,99,235,0.3); }
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(12px);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: 0.3s;
+        }
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .modal-box {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 35px;
+            border-radius: 24px;
+            max-width: 450px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+        }
+        .modal-box h3 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+        .modal-box p {
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            margin-bottom: 25px;
+            white-space: pre-line;
+            line-height: 1.8;
+            text-align: left;
+        }
+        .modal-actions {
+            display: flex;
+            gap: 10px;
+        }
+        .btn-modal {
+            flex: 1;
+            padding: 12px;
+            border-radius: 12px;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn-modal-back {
+            background: #f1f5f9;
+            color: var(--text-gray);
+        }
+        .btn-modal-back:hover {
+            background: #e2e8f0;
+        }
+        .btn-modal-go {
+            background: linear-gradient(135deg, var(--accent), #7c3aed);
+            color: white;
+        }
+        .btn-modal-go:hover {
+            transform: scale(1.03);
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+        }
 
-        /* ===== FOOTER DENGAN TANGGAL (BARU) ===== */
-        .footer-clean { background: var(--primary-dark); padding: 30px 5%; text-align: center; color: #64748b; font-size: 0.9rem; }
-        .footer-clean .est-date { color: #94a3b8; font-weight: 300; letter-spacing: 1px; margin-top: 5px; display: block; font-size: 0.75rem; }
+        .footer-clean {
+            background: var(--primary-dark);
+            padding: 30px 5%;
+            text-align: center;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+        .footer-clean .est-date {
+            color: #94a3b8;
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin-top: 5px;
+            display: block;
+            font-size: 0.75rem;
+        }
+
+        .slot-status {
+            font-size: 0.7rem;
+            color: var(--text-gray);
+            margin-top: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+        .slot-status .dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #22c55e;
+        }
+        .slot-status .dot.offline {
+            background: #ef4444;
+        }
 
         @media (max-width: 768px) {
-            .hero-title { font-size: 2.2rem; }
-            .hero-buttons { flex-direction: column; gap: 12px; align-items: center; }
-            .pricing-vip { flex-direction: column; align-items: center; }
-            .pricing-card { max-width: 100%; width: 100%; min-width: unset; }
-            .variant-card { max-width: 100%; width: 100%; min-width: unset; }
-            .monarki-variant-wrapper { flex-direction: column; align-items: center; }
-            .nav-links { display: none; }
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            .hero-buttons {
+                flex-direction: column;
+                gap: 12px;
+                align-items: center;
+            }
+            .pricing-vip {
+                flex-direction: column;
+                align-items: center;
+            }
+            .pricing-card {
+                max-width: 100%;
+                width: 100%;
+                min-width: unset;
+            }
+            .variant-card {
+                max-width: 100%;
+                width: 100%;
+                min-width: unset;
+            }
+            .monarki-variant-wrapper {
+                flex-direction: column;
+                align-items: center;
+            }
+            .nav-links {
+                display: none;
+            }
         }
     </style>
 </head>
 <body>
 
+    <!-- ===== NAVBAR ===== -->
     <nav class="navbar-premium">
         <div class="nav-container">
             <div class="logo-area">
@@ -260,17 +905,17 @@
         </div>
     </nav>
 
+    <!-- ===== HERO ===== -->
     <header id="beranda" class="hero-section">
         <div class="hero-content">
             <span class="badge-mission">🛡️ PROGRAM PERCONTOHAN 15 UMKM BANDUNG</span>
             <h1 class="hero-title">Katalog Digital Mandiri,<br><span class="highlight-text">0% Potongan Komisi.</span></h1>
             <p class="hero-subtitle">15 warung pertama akan menjadi fondasi utama ekosistem HaloMitra. Dapatkan garansi harga terkunci 6 tahun dan pendampingan langsung dari Founder.</p>
-            
-            <!-- ===== RIBBON TANGGAL MEWAH (LETAK: DI SINI!) ===== -->
+
             <div class="date-ribbon">
                 📅 <span>Direncanakan</span> <strong>Sejak 2025</strong> <span>·</span> <strong>Launch Perdana</strong> <span>Juni 2026</span>
             </div>
-            
+
             <div class="hero-buttons">
                 <a href="#vip" class="btn-primary">Lihat 15 Slot VIP</a>
                 <a href="#demo" class="btn-secondary">Coba Demo</a>
@@ -278,6 +923,7 @@
         </div>
     </header>
 
+    <!-- ===== MANIFESTO ===== -->
     <section id="misi" class="manifesto-section">
         <div class="container-box">
             <div class="manifesto-card">
@@ -288,6 +934,7 @@
         </div>
     </section>
 
+    <!-- ===== DEMO ===== -->
     <section id="demo" class="demo-section">
         <div class="demo-container">
             <div class="demo-text">
@@ -305,9 +952,21 @@
                     <div class="katalog-mini">
                         <h3 style="text-align:center;color:var(--primary);font-size:1.1rem;margin-bottom:10px;">Kios Demo</h3>
                         <div class="grid-produk-mini">
-                            <div class="kartu-produk-mini"><div><h4>Nasi Goreng Telur</h4><span class="harga-mini">Rp 15.000</span></div><button class="btn-tambah-demo" data-nama="Nasi Goreng Telur" data-harga="15000">+ Tambah</button></div>
-                            <div class="kartu-produk-mini"><div><h4>Mie Tek-Tek Kuah</h4><span class="harga-mini">Rp 15.000</span></div><button class="btn-tambah-demo" data-nama="Mie Tek-Tek Kuah" data-harga="15000">+ Tambah</button></div>
-                            <div class="kartu-produk-mini"><div><h4>Es Teh Manis</h4><span class="harga-mini">Rp 5.000</span></div><button class="btn-tambah-demo" data-nama="Es Teh Manis" data-harga="5000">+ Tambah</button></div>
+                            <div class="kartu-produk-mini">
+                                <div>
+                                    <h4>Nasi Goreng Telur</h4><span class="harga-mini">Rp 15.000</span>
+                                </div><button class="btn-tambah-demo" data-nama="Nasi Goreng Telur" data-harga="15000">+ Tambah</button>
+                            </div>
+                            <div class="kartu-produk-mini">
+                                <div>
+                                    <h4>Mie Tek-Tek Kuah</h4><span class="harga-mini">Rp 15.000</span>
+                                </div><button class="btn-tambah-demo" data-nama="Mie Tek-Tek Kuah" data-harga="15000">+ Tambah</button>
+                            </div>
+                            <div class="kartu-produk-mini">
+                                <div>
+                                    <h4>Es Teh Manis</h4><span class="harga-mini">Rp 5.000</span>
+                                </div><button class="btn-tambah-demo" data-nama="Es Teh Manis" data-harga="5000">+ Tambah</button>
+                            </div>
                         </div>
                     </div>
                     <div class="keranjang-demo">
@@ -319,17 +978,27 @@
         </div>
     </section>
 
+    <!-- ===== VIP PRICING ===== -->
     <section id="vip" class="vip-section">
         <div class="vip-header">
             <h2>🛡️ 15 VIP Percontohan</h2>
             <span class="badge-limit">⭐ Pendaftaran Ditutup Setelah Kuota Penuh</span>
-            <div class="progress-container"><div id="progress-fill" class="progress-fill" style="width: 0%;"></div></div>
-            <p style="margin-top:10px;color:var(--text-gray);"><span id="slot-terisi">0</span> dari 15 slot sudah terisi. Garansi 6 Tahun hanya berlaku untuk 15 VIP ini.</p>
+            <div class="progress-container">
+                <div id="progress-fill" class="progress-fill" style="width: 0%;"></div>
+            </div>
+            <p style="margin-top:10px;color:var(--text-gray);">
+                <span id="slot-terisi">0</span> dari 15 slot sudah terisi.
+                Garansi 6 Tahun hanya berlaku untuk 15 VIP ini.
+                <span class="slot-status" id="slot-status">
+                    <span class="dot" id="status-dot"></span>
+                    <span id="status-label">Sinkronisasi real-time</span>
+                </span>
+            </p>
         </div>
-        
+
         <div class="pricing-vip">
             <!-- PAKET GERILYA -->
-            <div class="pricing-card">
+            <div class="pricing-card" data-paket="Gerilya" onclick="selectPackage('Gerilya')">
                 <div class="tier-name">⚡ Paket Gerilya</div>
                 <div class="price-box">
                     <span class="main-price"><sup>Rp</sup> 15.000<span>/bln</span></span>
@@ -341,16 +1010,16 @@
                     <li>✅ Direct WhatsApp</li>
                     <li>✅ Garansi 6 Tahun (VIP)</li>
                 </ul>
-                <div class="addon-box" id="addon-gerilya" onclick="toggleAddon('gerilya')">
+                <div class="addon-box" id="addon-gerilya" onclick="event.stopPropagation(); toggleAddon('gerilya')">
                     🎨 + Desain Logo: <del>Rp 50.000</del> <strong style="color:#16a34a;">Rp 10.000</strong>
                     <span class="toggle-indicator">[Klik untuk tambah]</span>
                 </div>
-                <button class="btn-order btn-trigger-modal" data-paket="Gerilya">Pilih Gerilya</button>
+                <button class="btn-order btn-trigger-modal" data-paket="Gerilya" onclick="event.stopPropagation();">Pilih Gerilya</button>
                 <div class="slot-remaining">Kuota Gabungan: 12 slot (dengan Ekspansi Pro)</div>
             </div>
 
             <!-- PAKET EKSPANSI PRO -->
-            <div class="pricing-card featured">
+            <div class="pricing-card featured" data-paket="Ekspansi Pro" onclick="selectPackage('Ekspansi Pro')">
                 <div class="badge-featured">⭐ REKOMENDASI</div>
                 <div class="tier-name">🚀 Ekspansi Pro</div>
                 <div class="price-box">
@@ -364,22 +1033,23 @@
                     <li>✅ Tatap Muka Langsung</li>
                     <li>✅ Garansi 6 Tahun (VIP)</li>
                 </ul>
-                <div class="addon-box" id="addon-ekspansi" onclick="toggleAddon('ekspansi')">
+                <div class="addon-box" id="addon-ekspansi" onclick="event.stopPropagation(); toggleAddon('ekspansi')">
                     🎨 + Desain Logo Profesional: <del>Rp 120.000</del> <strong style="color:#16a34a;">Rp 25.000</strong>
                     <span class="toggle-indicator">[Klik untuk tambah]</span>
                 </div>
-                <button class="btn-order btn-trigger-modal" data-paket="Ekspansi Pro">Pilih Ekspansi Pro</button>
+                <button class="btn-order btn-trigger-modal" data-paket="Ekspansi Pro" onclick="event.stopPropagation();">Pilih Ekspansi Pro</button>
                 <div class="slot-remaining">Kuota Gabungan: 12 slot (dengan Gerilya)</div>
             </div>
         </div>
 
-        <!-- SECTION MONARKI -->
+        <!-- MONARKI VARIANTS -->
         <div style="max-width:1200px; margin: 30px auto 0; text-align: center;">
             <h3 style="font-size:1.5rem; color: var(--primary); margin-bottom: 5px;">👑 Pilih Varian Monarki</h3>
             <p style="color: var(--text-gray); margin-bottom: 25px;">Sesuaikan dengan skala usaha Anda. Klik kartu untuk melihat detail.</p>
-            
+
             <div class="monarki-variant-wrapper">
-                <div class="variant-card" id="card-premier" onclick="selectVariant('premier')">
+                <!-- MONARKI PREMIER -->
+                <div class="variant-card" id="card-premier" data-paket="Monarki Premier" onclick="selectVariant('premier')">
                     <span class="badge-variant badge-premier">🎯 UNTUK KELUARGA</span>
                     <h3 style="color: #e67e22;">Monarki Premier</h3>
                     <div class="price-box">
@@ -397,12 +1067,13 @@
                         🎨 + Desain Logo Premium: <del>Rp 150.000</del> <strong style="color:#16a34a;">Rp 35.000</strong>
                         <span class="toggle-indicator">[Klik untuk tambah]</span>
                     </div>
-                    <button class="btn-premier-order btn-trigger-modal" data-paket="Monarki Premier">Pilih Premier →</button>
+                    <button class="btn-premier-order btn-trigger-modal" data-paket="Monarki Premier" onclick="event.stopPropagation();">Pilih Premier →</button>
                     <div style="margin-top:8px; font-size:0.75rem; color: var(--success);">🎁 Gratis Ongkir Spanduk</div>
                     <div class="slot-remaining" style="color: #e67e22;">Khusus 3 Slot</div>
                 </div>
 
-                <div class="variant-card" id="card-pro" onclick="selectVariant('pro')">
+                <!-- MONARKI PRO -->
+                <div class="variant-card" id="card-pro" data-paket="Monarki Pro" onclick="selectVariant('pro')">
                     <span class="badge-variant badge-pro">🏢 UNTUK BISNIS BESAR</span>
                     <h3 style="color: #8e44ad;">Monarki Pro</h3>
                     <div class="price-box">
@@ -420,14 +1091,14 @@
                         🎨 + Desain Logo Korporat: <del>Rp 200.000</del> <strong style="color:#16a34a;">Rp 50.000</strong>
                         <span class="toggle-indicator">[Klik untuk tambah]</span>
                     </div>
-                    <button class="btn-pro-order btn-trigger-modal" data-paket="Monarki Pro">Pilih Pro →</button>
+                    <button class="btn-pro-order btn-trigger-modal" data-paket="Monarki Pro" onclick="event.stopPropagation();">Pilih Pro →</button>
                     <div class="slot-remaining" style="color: #8e44ad;">Khusus 2 Slot</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Toast Notifikasi -->
+    <!-- ===== TOAST & MODAL ===== -->
     <div id="toastVariant" class="toast-notification">
         ✅ Anda memilih <span id="selectedVariantName">Monarki Premier</span>. Klik tombol di kartu untuk konfirmasi ke Architect System.
     </div>
@@ -448,38 +1119,118 @@
         </div>
     </div>
 
+    <!-- ===== FOOTER ===== -->
     <footer class="footer-clean">
         <p>© 2026 HaloMitra Digital Infrastructure. Berdiri Tegap Bersama 15 UMKM Pertama.</p>
-        <!-- ===== TANGGAL DI FOOTER (LETAK: DI SINI) ===== -->
         <span class="est-date">📅 Est. 2025 · Public Launch June 2026</span>
     </footer>
 
+    <!-- ============================================================
+    FIREBASE CDN (Compat SDK)
+    ============================================================ -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js">
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database-compat.js">
+    </script>
+
+    <!-- ============================================================
+    JAVASCRIPT — SEMUA MODUL TERINTEGRASI
+    ============================================================ -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+
+            // ============================================================
+            // 1. KONFIGURASI DASAR
+            // ============================================================
             const WHATSAPP_NUMBER = "6282312559796";
-            let slotTerisi = 4; 
+            const MAX_SLOTS = 15;
 
-            const progressFill = document.getElementById('progress-fill');
+            // ============================================================
+            // 2. MODUL A: UNIFIED PRICING & ADDON STATE ENGINE
+            // ============================================================
+
+            const PRICE_DATA = {
+                'Gerilya': { setup: 75000, monthly: 15000, addonKey: 'gerilya' },
+                'Ekspansi Pro': { setup: 335000, monthly: 50000, addonKey: 'ekspansi' },
+                'Monarki Premier': { setup: 450000, monthly: 75000, addonKey: 'premier' },
+                'Monarki Pro': { setup: 999000, monthly: 150000, addonKey: 'pro' }
+            };
+
+            const ADDON_PRICES = {
+                gerilya: 10000,
+                ekspansi: 25000,
+                premier: 35000,
+                pro: 50000
+            };
+
+            const ADDON_LABELS = {
+                gerilya: 'Desain Logo',
+                ekspansi: 'Desain Logo Profesional',
+                premier: 'Desain Logo Premium',
+                pro: 'Desain Logo Korporat'
+            };
+
+            // --- State Terpusat ---
+            const state = {
+                selectedPackage: 'Ekspansi Pro',
+                addons: {
+                    gerilya: false,
+                    ekspansi: false,
+                    premier: false,
+                    pro: false
+                }
+            };
+
             const slotText = document.getElementById('slot-terisi');
-            function updateSlotDisplay() {
-                let percent = Math.min((slotTerisi / 15) * 100, 100);
-                progressFill.style.width = percent + "%";
-                slotText.innerText = slotTerisi;
-            }
-            updateSlotDisplay();
+            const progressFill = document.getElementById('progress-fill');
 
-            const addonState = { gerilya: false, ekspansi: false, premier: false, pro: false };
+            function getCurrentPricing() {
+                const pkg = state.selectedPackage;
+                if (!pkg || !PRICE_DATA[pkg]) {
+                    return { setup: 0, monthly: 0, addonPrice: 0, totalSetup: 0, addonLabel: null, addonActive: false,
+                        addonKey: null };
+                }
+                const base = PRICE_DATA[pkg];
+                const addonKey = base.addonKey;
+                const addonActive = state.addons[addonKey] || false;
+                const addonPrice = addonActive ? ADDON_PRICES[addonKey] : 0;
+                const addonLabel = addonActive ? ADDON_LABELS[addonKey] : null;
+                return {
+                    setup: base.setup,
+                    monthly: base.monthly,
+                    addonPrice: addonPrice,
+                    totalSetup: base.setup + addonPrice,
+                    addonLabel: addonLabel,
+                    addonActive: addonActive,
+                    addonKey: addonKey
+                };
+            }
 
             window.toggleAddon = function(key) {
+                state.addons[key] = !state.addons[key];
                 const el = document.getElementById('addon-' + key);
-                addonState[key] = !addonState[key];
-                if (addonState[key]) {
-                    el.classList.add('active');
-                    el.querySelector('.toggle-indicator').textContent = '[✓ Ditambahkan]';
-                } else {
-                    el.classList.remove('active');
-                    el.querySelector('.toggle-indicator').textContent = '[Klik untuk tambah]';
+                if (el) {
+                    if (state.addons[key]) {
+                        el.classList.add('active');
+                        el.querySelector('.toggle-indicator').textContent = '[✓ Ditambahkan]';
+                    } else {
+                        el.classList.remove('active');
+                        el.querySelector('.toggle-indicator').textContent = '[Klik untuk tambah]';
+                    }
                 }
+                updateCardSelection(state.selectedPackage);
+            };
+
+            window.selectPackage = function(packageName) {
+                state.selectedPackage = packageName;
+                document.querySelectorAll('.pricing-card').forEach(c => c.classList.remove('selected-card'));
+                document.querySelectorAll('.pricing-card').forEach(c => {
+                    if (c.getAttribute('data-paket') === packageName) {
+                        c.classList.add('selected-card');
+                    }
+                });
+                updateCardSelection(packageName);
+                showToast('✅ Paket ' + packageName + ' dipilih');
             };
 
             window.selectVariant = function(type) {
@@ -491,22 +1242,208 @@
                 cardPremier.classList.remove('selected-premier');
                 cardPro.classList.remove('selected-pro');
 
-                let name = '';
+                let packageName = '';
                 if (type === 'premier') {
                     cardPremier.classList.add('selected-premier');
-                    name = 'Monarki Premier (Rp 450.000)';
+                    packageName = 'Monarki Premier';
                 } else {
                     cardPro.classList.add('selected-pro');
-                    name = 'Monarki Pro (Rp 999.000)';
+                    packageName = 'Monarki Pro';
                 }
 
-                nameSpan.innerText = name;
+                state.selectedPackage = packageName;
+                document.querySelectorAll('.pricing-card').forEach(c => c.classList.remove('selected-card'));
+
+                updateCardSelection(packageName);
+
+                nameSpan.innerText = packageName + ' (Rp ' + (PRICE_DATA[packageName]?.setup || 0).toLocaleString('id-ID') +
+                    ')';
                 toast.classList.add('show');
                 clearTimeout(window.toastTimer);
                 window.toastTimer = setTimeout(() => {
                     toast.classList.remove('show');
                 }, 5000);
             };
+
+            function updateCardSelection(packageName) {
+                // Placeholder for future visual updates
+            }
+
+            function showToast(msg) {
+                const toast = document.getElementById('toastVariant');
+                const nameSpan = document.getElementById('selectedVariantName');
+                nameSpan.innerText = msg;
+                toast.classList.add('show');
+                clearTimeout(window.toastTimer);
+                window.toastTimer = setTimeout(() => {
+                    toast.classList.remove('show');
+                }, 3000);
+            }
+
+
+            // ============================================================
+            // 3. MODUL B: FIREBASE LIVE SYNC + LOCAL FALLBACK
+            // ============================================================
+
+            const firebaseConfig = {
+                apiKey: "AIzaSyAFPWxuiFVT22l1caHy6MfhQ30jgjsB6pE",
+                authDomain: "halomitra-a2084.firebaseapp.com",
+                databaseURL: "https://halomitra-a2084-default-rtdb.asia-southeast1.firebasedatabase.app",
+                projectId: "halomitra-a2084",
+                storageBucket: "halomitra-a2084.firebasestorage.app",
+                messagingSenderId: "70280666368",
+                appId: "1:70280666368:web:0207cd8234be845f44a7e5",
+                measurementId: "G-9R0LG6MJF9"
+            };
+
+            let slotTerisi = 4;
+            let firebaseConnected = false;
+            let fallbackTimer = null;
+            let firebaseInitAttempted = false;
+
+            const statusDot = document.getElementById('status-dot');
+            const statusLabel = document.getElementById('status-label');
+
+            function setFirebaseStatus(connected) {
+                firebaseConnected = connected;
+                if (statusDot) {
+                    statusDot.className = 'dot' + (connected ? '' : ' offline');
+                }
+                if (statusLabel) {
+                    statusLabel.textContent = connected ? 'Sinkronisasi real-time' : 'Mode offline (simulasi)';
+                }
+            }
+
+            function updateSlotDisplay() {
+                const percent = Math.min((slotTerisi / MAX_SLOTS) * 100, 100);
+                if (progressFill) {
+                    progressFill.style.width = percent + '%';
+                }
+                if (slotText) {
+                    slotText.innerText = slotTerisi;
+                }
+            }
+
+            function startLocalFallback() {
+                setFirebaseStatus(false);
+                if (fallbackTimer) {
+                    clearInterval(fallbackTimer);
+                    fallbackTimer = null;
+                }
+                fallbackTimer = setTimeout(function() {
+                    if (!firebaseConnected) {
+                        slotTerisi = Math.min(slotTerisi + 1, MAX_SLOTS);
+                        updateSlotDisplay();
+                        showToast('📈 ' + slotTerisi + ' dari ' + MAX_SLOTS +
+                            ' slot sudah terisi! (Simulasi lapangan)');
+                        fallbackTimer = setInterval(function() {
+                            if (!firebaseConnected && slotTerisi < MAX_SLOTS) {
+                                slotTerisi = Math.min(slotTerisi + 1, MAX_SLOTS);
+                                updateSlotDisplay();
+                                showToast('🔥 ' + slotTerisi + ' slot terisi! Cepat sebelum habis.');
+                            }
+                        }, 30000);
+                    }
+                }, 20000);
+            }
+
+            function initFirebase() {
+                if (firebaseInitAttempted) return;
+                firebaseInitAttempted = true;
+
+                try {
+                    if (typeof firebase === 'undefined') {
+                        console.warn('Firebase SDK tidak ditemukan, gunakan local fallback.');
+                        startLocalFallback();
+                        return;
+                    }
+
+                    const app = firebase.initializeApp(firebaseConfig);
+                    const database = firebase.database(app);
+                    const slotsRef = database.ref('/v1_setup/slots_occupied');
+
+                    const timeoutId = setTimeout(() => {
+                        console.warn('Firebase timeout (3 detik), beralih ke local fallback.');
+                        setFirebaseStatus(false);
+                        startLocalFallback();
+                    }, 3000);
+
+                    slotsRef.once('value').then((snapshot) => {
+                        clearTimeout(timeoutId);
+                        const val = snapshot.val();
+                        if (val !== null && typeof val === 'number') {
+                            slotTerisi = Math.min(val, MAX_SLOTS);
+                            updateSlotDisplay();
+                            setFirebaseStatus(true);
+                            showToast('✅ ' + slotTerisi + ' dari ' + MAX_SLOTS + ' slot terisi (real-time)');
+                        } else {
+                            slotTerisi = 4;
+                            updateSlotDisplay();
+                            setFirebaseStatus(true);
+                        }
+                    }).catch((err) => {
+                        clearTimeout(timeoutId);
+                        console.warn('Firebase read error:', err);
+                        setFirebaseStatus(false);
+                        startLocalFallback();
+                    });
+
+                    slotsRef.on('value', (snapshot) => {
+                        const val = snapshot.val();
+                        if (val !== null && typeof val === 'number') {
+                            slotTerisi = Math.min(val, MAX_SLOTS);
+                            updateSlotDisplay();
+                        }
+                    }, (error) => {
+                        console.warn('Firebase listen error:', error);
+                        if (firebaseConnected) {
+                            setFirebaseStatus(false);
+                            startLocalFallback();
+                        }
+                    });
+
+                    setFirebaseStatus(true);
+
+                } catch (e) {
+                    console.warn('Firebase init error:', e);
+                    setFirebaseStatus(false);
+                    startLocalFallback();
+                }
+            }
+
+            initFirebase();
+
+
+            // ============================================================
+            // 4. MODUL C: ADVANCED WHATSAPP INVOICE FORMATTER
+            // ============================================================
+
+            function formatInvoice(packageName, setupPrice, monthlyPrice, addonName, addonPrice) {
+                const lines = [];
+                lines.push('====================================');
+                lines.push('*REGISTRASI 15 VIP HALOMITRA*');
+                lines.push('====================================');
+                lines.push('');
+                lines.push('• *Paket/Varian:* ' + packageName);
+                lines.push('• *Biaya Setup:* Rp ' + setupPrice.toLocaleString('id-ID'));
+                lines.push('• *Biaya Bulanan:* Rp ' + monthlyPrice.toLocaleString('id-ID') + '/bln');
+                lines.push('');
+                if (addonName && addonPrice > 0) {
+                    lines.push('--------------------');
+                    lines.push('*ADDON YANG DIPILIH:*');
+                    lines.push(' - ' + addonName + ' (Rp ' + addonPrice.toLocaleString('id-ID') + ')');
+                    lines.push('--------------------');
+                    lines.push('*Total Setup:* Rp ' + (setupPrice + addonPrice).toLocaleString('id-ID'));
+                } else {
+                    lines.push('--------------------');
+                    lines.push('*Tidak ada addon tambahan*');
+                }
+                lines.push('');
+                lines.push('Mohon jadwal tatap muka asistensi oleh Architect System.');
+                lines.push('');
+                lines.push('_Pesan ini dikirim otomatis dari sistem HaloMitra._');
+                return lines.join('\n');
+            }
 
             const modal = document.getElementById('order-modal');
             const modalText = document.getElementById('modal-text');
@@ -518,105 +1455,150 @@
                 btn.addEventListener('click', function(e) {
                     e.stopPropagation();
                     targetPaket = this.getAttribute('data-paket');
-                    
-                    let addonText = "";
-                    let addonPrice = 0;
-                    const paketKeyMap = {
-                        'Gerilya': 'gerilya',
-                        'Ekspansi Pro': 'ekspansi',
-                        'Monarki Premier': 'premier',
-                        'Monarki Pro': 'pro'
-                    };
-                    const key = paketKeyMap[targetPaket];
-                    if (key && addonState[key]) {
-                        const prices = {
-                            gerilya: 10000,
-                            ekspansi: 25000,
-                            premier: 35000,
-                            pro: 50000
-                        };
-                        addonPrice = prices[key] || 0;
-                        addonText = `\n✅ + Desain Logo (Rp ${addonPrice.toLocaleString('id-ID')})`;
+
+                    const pkgData = PRICE_DATA[targetPaket];
+                    if (pkgData) {
+                        const addonKey = pkgData.addonKey;
+                        const addonActive = state.addons[addonKey] || false;
+                        const addonPrice = addonActive ? ADDON_PRICES[addonKey] : 0;
+                        const addonName = addonActive ? ADDON_LABELS[addonKey] : null;
+                        const setupPrice = pkgData.setup;
+                        const monthlyPrice = pkgData.monthly;
+                        const totalSetup = setupPrice + addonPrice;
+
+                        const invoiceText = formatInvoice(
+                            targetPaket,
+                            setupPrice,
+                            monthlyPrice,
+                            addonName,
+                            addonPrice
+                        );
+
+                        modalText.innerText = invoiceText;
+                    } else {
+                        modalText.innerText = 'Paket: ' + targetPaket +
+                            '\n\nHubungkan sistem katalog mandiri Anda langsung dengan Architect System HaloMitra.';
                     }
-
-                    const setupPrices = {
-                        'Gerilya': 75000,
-                        'Ekspansi Pro': 335000,
-                        'Monarki Premier': 450000,
-                        'Monarki Pro': 999000
-                    };
-                    const monthlyPrices = {
-                        'Gerilya': 15000,
-                        'Ekspansi Pro': 50000,
-                        'Monarki Premier': 75000,
-                        'Monarki Pro': 150000
-                    };
-                    const setupPrice = setupPrices[targetPaket] || 0;
-                    const monthlyPrice = monthlyPrices[targetPaket] || 0;
-                    const totalSetup = setupPrice + addonPrice;
-
-                    modalText.innerHTML = `
-                        <strong>Paket: ${targetPaket}</strong><br>
-                        Setup: Rp ${setupPrice.toLocaleString('id-ID')}
-                        ${addonText ? '<br>' + addonText : ''}
-                        <br><br>
-                        <strong>Total Setup: Rp ${totalSetup.toLocaleString('id-ID')}</strong><br>
-                        Bulanan: Rp ${monthlyPrice.toLocaleString('id-ID')}/bulan<br><br>
-                        Apakah Anda ingin melanjutkan koordinasi pendaftaran sebagai bagian dari 15 VIP Percontohan bersama Architect System HaloMitra?
-                    `;
                     modal.classList.add('active');
                 });
             });
 
-            btnClose.addEventListener('click', () => modal.classList.remove('active'));
-            btnConfirm.addEventListener('click', function() {
-                const message = "Halo Architect System HaloMitra,\n\nSaya tertarik menjadi bagian dari 15 VIP Percontohan, Paket *" + targetPaket + "*. Mohon arahan jadwal tatap mukanya.";
-                window.open("https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message), '_blank');
+            btnClose.addEventListener('click', function() {
                 modal.classList.remove('active');
             });
 
-            let cart = [];
-            const countEl = document.getElementById('demo-count');
-            const priceEl = document.getElementById('demo-price');
+            btnConfirm.addEventListener('click', function() {
+                const invoiceContent = modalText.innerText;
+                const message = invoiceContent + '\n\n' +
+                    'Saya tertarik menjadi bagian dari 15 VIP Percontohan, Paket *' + targetPaket + '*.';
+                window.open('https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(message), '_blank');
+                modal.classList.remove('active');
+            });
 
-            document.querySelectorAll('.btn-tambah-demo').forEach(btn => {
+
+            // ============================================================
+            // 5. MODUL D: LOCALSTORAGE CART PERSISTENCE
+            // ============================================================
+
+            const cartKey = 'halomitra_demo_cart';
+            let cart = [];
+
+            function loadCart() {
+                try {
+                    const stored = localStorage.getItem(cartKey);
+                    if (stored) {
+                        const parsed = JSON.parse(stored);
+                        if (Array.isArray(parsed)) {
+                            cart = parsed;
+                            return true;
+                        }
+                    }
+                } catch (e) { /* ignore */ }
+                return false;
+            }
+
+            function saveCart() {
+                try {
+                    localStorage.setItem(cartKey, JSON.stringify(cart));
+                } catch (e) { /* ignore */ }
+            }
+
+            function renderCart() {
+                const countEl = document.getElementById('demo-count');
+                const priceEl = document.getElementById('demo-price');
+                if (!countEl || !priceEl) return;
+
+                const totalHarga = cart.reduce((sum, item) => sum + (item.harga || 0), 0);
+                countEl.innerText = cart.length + ' Menu';
+                priceEl.innerText = 'Rp ' + totalHarga.toLocaleString('id-ID');
+            }
+
+            loadCart();
+            renderCart();
+
+            document.querySelectorAll('.btn-tambah-demo').forEach(function(btn) {
                 btn.addEventListener('click', function() {
                     const nama = this.getAttribute('data-nama');
                     const harga = parseInt(this.getAttribute('data-harga'));
                     cart.push({ nama, harga });
-                    
+                    saveCart();
+                    renderCart();
+
                     const oldText = this.innerText;
-                    this.innerText = "✓ Masuk";
-                    this.style.background = "#dcfce7";
-                    this.style.color = "#16a34a";
+                    this.innerText = '✓ Masuk';
+                    this.style.background = '#dcfce7';
+                    this.style.color = '#16a34a';
                     setTimeout(() => {
                         this.innerText = oldText;
-                        this.style.background = "#eff6ff";
-                        this.style.color = "var(--accent)";
+                        this.style.background = '#eff6ff';
+                        this.style.color = 'var(--accent)';
                     }, 600);
-
-                    const totalHarga = cart.reduce((sum, item) => sum + item.harga, 0);
-                    countEl.innerText = cart.length + " Menu";
-                    priceEl.innerText = "Rp " + totalHarga.toLocaleString('id-ID');
                 });
             });
 
-            document.getElementById('btn-demo-wa').addEventListener('click', function() {
-                if(cart.length === 0) {
-                    alert("Silakan klik '+ Tambah' pada menu terlebih dahulu untuk mencoba simulasi.");
-                    return;
+            const demoWaBtn = document.getElementById('btn-demo-wa');
+            if (demoWaBtn) {
+                demoWaBtn.addEventListener('click', function() {
+                    if (cart.length === 0) {
+                        alert('Silakan klik "+ Tambah" pada menu terlebih dahulu untuk mencoba simulasi.');
+                        return;
+                    }
+                    let textOrder = 'Halo Kios (Simulasi Demo Web),\nBerikut rincian pesanan saya:\n\n';
+                    let total = cart.reduce((sum, item) => sum + (item.harga || 0), 0);
+                    cart.forEach(item => {
+                        textOrder += '- ' + item.nama + ' (Rp ' + (item.harga || 0).toLocaleString('id-ID') +
+                            ')\n';
+                    });
+                    textOrder += '\n*Total Tagihan: Rp ' + total.toLocaleString('id-ID') + '*';
+                    textOrder += '\n\n_Catatan: Ini adalah simulasi pengiriman pesanan dari demo HaloMitra._';
+                    window.open('https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(textOrder),
+                        '_blank');
+                    cart = [];
+                    saveCart();
+                    renderCart();
+                });
+            }
+
+
+            // ============================================================
+            // 6. INISIALISASI AKHIR
+            // ============================================================
+
+            updateSlotDisplay();
+
+            document.querySelectorAll('.pricing-card').forEach(c => {
+                if (c.getAttribute('data-paket') === 'Ekspansi Pro') {
+                    c.classList.add('selected-card');
                 }
-                let textOrder = "Halo Kios (Simulasi Demo Web),\nBerikut rincian pesanan saya:\n\n";
-                let total = cart.reduce((sum, item) => sum + item.harga, 0);
-                cart.forEach(item => textOrder += "- " + item.nama + " (Rp " + item.harga.toLocaleString('id-ID') + ")\n");
-                textOrder += "\n*Total Tagihan: Rp " + total.toLocaleString('id-ID') + "*";
-                textOrder += "\n\n_Catatan: Ini adalah simulasi pengiriman pesanan dari demo HaloMitra._";
-                window.open("https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(textOrder), '_blank');
-                cart = [];
-                countEl.innerText = "0 Menu";
-                priceEl.innerText = "Rp 0";
             });
+
+            console.log('🚀 HaloMitra Architecture System siap!');
+            console.log('📦 State:', state);
+            console.log('🛒 Cart items:', cart.length);
+            console.log('📡 Firebase status:', firebaseConnected ? 'Online' : 'Offline (fallback)');
+
         });
     </script>
+
 </body>
 </html>
