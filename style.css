@@ -1,0 +1,19 @@
+/* Date Ribbon Mewah */
+.date-ribbon {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 215, 0, 0.08);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 215, 0, 0.25);
+    padding: 8px 24px;
+    border-radius: 100px;
+    margin-bottom: 28px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #fcd34d;
+    letter-spacing: 0.5px;
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.05);
+}
+.date-ribbon strong { color: #fbbf24; font-weight: 800; }
+.date-ribbon span { color: rgba(255,255,255,0.5); margin: 0 5px; }
